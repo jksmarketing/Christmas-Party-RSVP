@@ -1,10 +1,10 @@
 /**
  * POST /api/register
  *
- * The browser submits the RSVP here.
- * The monday.com API token stays on the server as a Cloudflare secret.
+ * Der Browser sendet die Anmeldung hierhin.
+ * Das monday.com API-Token bleibt als Cloudflare-Secret auf dem Server.
  *
- * Required Cloudflare environment variables/secrets:
+ * Erforderliche Cloudflare-Umgebungsvariablen/Secrets:
  * - MONDAY_API_TOKEN
  * - MONDAY_BOARD_ID
  * - MONDAY_GROUP_ID (optional)
@@ -15,9 +15,9 @@ export async function onRequestPost(context) {
   try {
     const form = await request.formData();
 
-    // Simple anti-spam honeypot.
+    // Einfaches Anti-Spam-Honeypot.
     if (String(form.get("website") || "").trim()) {
-      return json({ message: "Thank you! Your registration has been received." });
+      return json({ message: "Vielen Dank! Deine Anmeldung wurde erfolgreich übermittelt." });
     }
 
     const firstName = clean(form.get("first_name"));
@@ -29,33 +29,33 @@ export async function onRequestPost(context) {
     const dietary = form.getAll("dietary").map(clean).filter(Boolean);
 
     if (!firstName || !lastName || !attendance) {
-      return json({ error: "Please complete all required fields." }, 400);
+      return json({ error: "Bitte fülle alle Pflichtfelder aus." }, 400);
     }
 
     if (!["Yes", "No"].includes(attendance)) {
-      return json({ error: "Please choose whether you will attend." }, 400);
+      return json({ error: "Bitte wähle aus, ob du teilnehmen wirst." }, 400);
     }
 
     if (!["Yes", "No"].includes(bringingGuest)) {
-      return json({ error: "Please choose a valid +1 option." }, 400);
+      return json({ error: "Bitte wähle eine gültige Begleitpersonen-Option." }, 400);
     }
 
     if (bringingGuest === "Yes" && attendance !== "Yes") {
-      return json({ error: "A +1 can only be added if you are attending." }, 400);
+      return json({ error: "Eine Begleitperson kann nur hinzugefügt werden, wenn du teilnimmst." }, 400);
     }
 
     if (bringingGuest === "Yes" && !guestName) {
-      return json({ error: "Please enter the name of your spouse / +1." }, 400);
+      return json({ error: "Bitte gib den Namen deiner Begleitperson an." }, 400);
     }
 
     if (!env.MONDAY_API_TOKEN || !env.MONDAY_BOARD_ID) {
-      console.log("Monday.com is not configured yet.");
+      console.log("Monday.com ist noch nicht konfiguriert.");
       return json({
-        error: "The form is not connected to monday.com yet. Please add the Cloudflare MONDAY_API_TOKEN and MONDAY_BOARD_ID before using it live."
+        error: "Das Formular ist noch nicht mit monday.com verbunden. Bitte hinterlege MONDAY_API_TOKEN und MONDAY_BOARD_ID in Cloudflare."
       }, 503);
     }
 
-    const dietaryText = dietary.length ? dietary.join(", ") : "None specified";
+    const dietaryText = dietary.length ? dietary.join(", ") : "Keine Angaben";
     const columnValues = {
       color_mm7q3wsc: { label: attendance },
       text_mm7qpayv: dietaryText,
@@ -102,13 +102,13 @@ export async function onRequestPost(context) {
 
     if (!mondayResponse.ok || mondayResult.errors?.length || !mondayResult.data?.create_item?.id) {
       console.error("monday.com error", mondayResult);
-      return json({ error: "We couldn't save your registration. Please try again later." }, 502);
+      return json({ error: "Deine Anmeldung konnte nicht gespeichert werden. Bitte versuche es später erneut." }, 502);
     }
 
-    return json({ message: "You're registered! We look forward to celebrating with you. 🎄" });
+    return json({ message: "Du bist angemeldet! Wir freuen uns darauf, mit dir zu feiern. 🎄" });
   } catch (error) {
     console.error(error);
-    return json({ error: "Something went wrong. Please try again." }, 500);
+    return json({ error: "Etwas ist schiefgelaufen. Bitte versuche es erneut." }, 500);
   }
 }
 
