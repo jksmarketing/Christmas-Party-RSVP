@@ -4,6 +4,7 @@ const button = document.getElementById("submit-button");
 const plusOneFieldset = document.getElementById("plus-one-fieldset");
 const guestNameWrapper = document.getElementById("guest-name-wrapper");
 const guestNameInput = form.querySelector('input[name="guest_name"]');
+const attendingDetails = document.getElementById("attending-details");
 const attendanceInputs = form.querySelectorAll('input[name="attendance"]');
 const guestInputs = form.querySelectorAll('input[name="bringing_guest"]');
 
@@ -19,6 +20,15 @@ function updateGuestFields() {
   const showGuestName = attending && bringingGuest === "Yes";
 
   setHidden(plusOneFieldset, !attending);
+  setHidden(attendingDetails, !attending);
+  // Do not submit stale dietary or note data when someone declines.
+  attendingDetails.querySelectorAll('input, textarea').forEach((field) => {
+    field.disabled = !attending;
+    if (!attending) {
+      if (field.type === "checkbox") field.checked = false;
+      if (field.tagName === "TEXTAREA") field.value = "";
+    }
+  });
   setHidden(guestNameWrapper, !showGuestName);
 
   guestNameInput.required = showGuestName;

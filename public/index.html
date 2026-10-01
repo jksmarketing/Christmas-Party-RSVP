@@ -29,15 +29,14 @@
       <p class="eyebrow reveal">THE CELEBRATION</p>
       <div class="event-details reveal">
         <div><span>WHEN</span><strong>Friday, 4 December 2026</strong></div>
-        <div><span>ARRIVAL</span><strong>16:45–17:15</strong></div>
-        <div><span>WHERE</span><strong>Juckerhof, Uster</strong></div>
+        <div><span>ARRIVAL</span><strong>From 17:30 · Main course at 19:00</strong></div>
+        <div><span>WHERE</span><strong><a class="venue-link" href="https://www.google.com/maps/search/?api=1&amp;query=Juckerhof%2C%20Dorfstrasse%2023%2C%208607%20Seegr%C3%A4ben" target="_blank" rel="noopener noreferrer" aria-label="Open Juckerhof in Google Maps">Juckerhof, Seegräben <span aria-hidden="true">↗</span></a></strong></div>
       </div>
-      <p class="event-note reveal">We look forward to celebrating with you. Partners and one guest are welcome.</p>
+      <p class="event-note reveal">We look forward to celebrating with you and your partner!</p>
     </section>
 
     <section class="rsvp-section" id="register">
       <div class="form-shell reveal">
-        <p class="eyebrow">YOUR INVITATION</p>
         <h1>Will you join us?</h1>
         <p class="form-intro">Please let us know by completing the form below.</p>
         <form id="rsvp-form">
@@ -62,6 +61,7 @@
           <label id="guest-name-wrapper" class="conditional hidden" aria-hidden="true">Guest's name <span aria-hidden="true">*</span>
             <input name="guest_name" autocomplete="off" placeholder="First and last name" maxlength="200">
           </label>
+          <div id="attending-details" class="conditional hidden" aria-hidden="true">
           <fieldset>
             <legend>Dietary requirements</legend>
             <div class="option-row dietary-options">
@@ -73,6 +73,7 @@
             </div>
           </fieldset>
           <label>Notes <span class="optional">(optional)</span><textarea name="notes" rows="3" placeholder="Allergies or anything we should know?"></textarea></label>
+          </div>
           <input class="hp" name="website" tabindex="-1" autocomplete="off" aria-hidden="true">
           <button class="button button-primary submit" type="submit" id="submit-button">Send registration <span aria-hidden="true">✦</span></button>
           <p id="form-message" class="message" role="status" aria-live="polite"></p>

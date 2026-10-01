@@ -105,3 +105,11 @@ Before publishing, update:
 - Motion: subtle image entrance, animated star, intersection-based section reveal and guest-field reveal.
 - `prefers-reduced-motion` is respected; form submissions and monday.com mapping are unchanged.
 - Visible date/time/location reflect current planning and should be verified before inviting everyone.
+
+## Latest visual / content update
+- Hero artwork slightly less zoomed (94% rather than 100%).
+- Arrival from 17:30; main course starts at 19:00.
+- Juckerhof address links to Google Maps (official venue address is Dorfstrasse 23, 8607 Seegräben).
+- Dietary requirements and notes only appear for attendees and are excluded for declines.
+- Removed the “YOUR INVITATION” heading.
+- Existing monday.com integration unchanged.
