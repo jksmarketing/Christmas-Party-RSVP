@@ -3,199 +3,84 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>A Real JKS Christmas | Christmas Party 2026</title>
-  <meta name="description" content="JKS Christmas Party 2026 — registration">
+  <meta name="theme-color" content="#0a1326">
+  <title>A Real JKS Christmas — RSVP</title>
+  <meta name="description" content="RSVP for A Real JKS Christmas 2026.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="/style.css">
+  <script defer src="/app.js"></script>
 </head>
 <body>
   <main>
-    <section class="hero" id="top">
-      <div class="hero-overlay"></div>
-      <div class="hero-glow hero-glow-left"></div>
-      <div class="hero-glow hero-glow-right"></div>
-      <div class="hero-stars" aria-hidden="true">
-        <span>✦</span><span>✧</span><span>✦</span><span>✧</span><span>✦</span>
-      </div>
-
-      <div class="hero-inner">
-        <p class="eyebrow">JKS ENGINEERING INVITES YOU</p>
-        <h1>A Real JKS <span>Christmas</span></h1>
-        <p class="intro">
-          Join us for an atmospheric evening inspired by the warmth, wonder and golden light of the season.
-        </p>
-
-        <div class="hero-meta">
-          <article>
-            <span class="meta-label">Date</span>
-            <strong>Friday, 4 December 2026</strong>
-          </article>
-          <article>
-            <span class="meta-label">Arrival</span>
-            <strong>16:45 – 17:15</strong>
-          </article>
-          <article>
-            <span class="meta-label">Venue</span>
-            <strong>Juckerhof, Uster</strong>
-          </article>
-        </div>
-
-        <div class="hero-actions">
-          <a class="button button-gold" href="#register">Register now</a>
-          <a class="button button-ghost" href="#details">See the evening</a>
-        </div>
+    <section class="hero" aria-label="A Real JKS Christmas invitation">
+      <div class="hero-art" role="img" aria-label="A Real JKS Christmas: three golden kings form the points of a crown against a starry desert sunset"></div>
+      <div class="hero-bottom">
+        <span class="hero-spark" aria-hidden="true">✦</span>
+        <p class="hero-kicker">You're invited</p>
+        <p class="hero-lead">An evening together, under the Christmas stars.</p>
+        <a class="button button-primary" href="#register">RSVP <span aria-hidden="true">↓</span></a>
       </div>
     </section>
 
-    <section class="content-shell" id="details">
-      <section class="story-card">
-        <div class="section-heading left">
-          <p class="eyebrow">THE EVENING</p>
-          <h2>An elegant celebration with a touch of Christmas wonder.</h2>
-          <p>
-            Inspired by our invitation artwork, the evening combines a warm festive mood with a refined, memorable setting. Please register so we can plan seating, food and the flow of the evening.
-          </p>
-        </div>
+    <section class="event-section" aria-label="Event details">
+      <div class="section-line reveal" aria-hidden="true"><span>✦</span></div>
+      <p class="eyebrow reveal">THE CELEBRATION</p>
+      <div class="event-details reveal">
+        <div><span>WHEN</span><strong>Friday, 4 December 2026</strong></div>
+        <div><span>ARRIVAL</span><strong>16:45–17:15</strong></div>
+        <div><span>WHERE</span><strong>Juckerhof, Uster</strong></div>
+      </div>
+      <p class="event-note reveal">We look forward to celebrating with you. Partners and one guest are welcome.</p>
+    </section>
 
-        <div class="info-grid">
-          <article class="info-panel">
-            <span class="panel-kicker">Where</span>
-            <h3>Juckerhof</h3>
-            <p>A special setting for our company Christmas celebration.</p>
-          </article>
-          <article class="info-panel">
-            <span class="panel-kicker">Guests</span>
-            <h3>Employees + optional spouse / +1</h3>
-            <p>You can register your spouse or one guest directly in the form.</p>
-          </article>
-          <article class="info-panel">
-            <span class="panel-kicker">Planning</span>
-            <h3>Food & organisation</h3>
-            <p>Please include dietary requirements and any relevant notes.</p>
-          </article>
-        </div>
-
-        <div class="timeline-block">
-          <div class="section-heading left compact">
-            <p class="eyebrow">PROGRAMME</p>
-            <h2>A warm and relaxed evening together.</h2>
+    <section class="rsvp-section" id="register">
+      <div class="form-shell reveal">
+        <p class="eyebrow">YOUR INVITATION</p>
+        <h1>Will you join us?</h1>
+        <p class="form-intro">Please let us know by completing the form below.</p>
+        <form id="rsvp-form">
+          <div class="two-cols">
+            <label>First name <span aria-hidden="true">*</span><input name="first_name" required autocomplete="given-name" maxlength="100"></label>
+            <label>Last name <span aria-hidden="true">*</span><input name="last_name" required autocomplete="family-name" maxlength="100"></label>
           </div>
-
-          <div class="timeline">
-            <div class="timeline-item">
-              <time>16:45</time>
-              <div>
-                <h3>Arrival</h3>
-                <p>Welcome and arrival window for guests.</p>
-              </div>
+          <fieldset>
+            <legend>Will you attend? <span aria-hidden="true">*</span></legend>
+            <div class="option-stack">
+              <label class="option"><input type="radio" name="attendance" value="Yes" required><span>Yes, I'll be there! ✨</span></label>
+              <label class="option"><input type="radio" name="attendance" value="No"><span>Unfortunately, I can't attend.</span></label>
             </div>
-            <div class="timeline-item">
-              <time>17:15</time>
-              <div>
-                <h3>Apéro & welcome</h3>
-                <p>Settle in, enjoy the atmosphere and start the evening together.</p>
-              </div>
+          </fieldset>
+          <fieldset id="plus-one-fieldset" class="conditional hidden" aria-hidden="true">
+            <legend>Bringing your spouse / +1?</legend>
+            <div class="option-row">
+              <label class="option"><input type="radio" name="bringing_guest" value="No" checked><span>No</span></label>
+              <label class="option"><input type="radio" name="bringing_guest" value="Yes"><span>Yes</span></label>
             </div>
-            <div class="timeline-item">
-              <time>18:00</time>
-              <div>
-                <h3>Dinner</h3>
-                <p>Good food, good conversations and time to celebrate the year together.</p>
-              </div>
+          </fieldset>
+          <label id="guest-name-wrapper" class="conditional hidden" aria-hidden="true">Guest's name <span aria-hidden="true">*</span>
+            <input name="guest_name" autocomplete="off" placeholder="First and last name" maxlength="200">
+          </label>
+          <fieldset>
+            <legend>Dietary requirements</legend>
+            <div class="option-row dietary-options">
+              <label class="option"><input type="checkbox" name="dietary" value="None"><span>None</span></label>
+              <label class="option"><input type="checkbox" name="dietary" value="Vegetarian"><span>Vegetarian</span></label>
+              <label class="option"><input type="checkbox" name="dietary" value="Vegan"><span>Vegan</span></label>
+              <label class="option"><input type="checkbox" name="dietary" value="Gluten-free"><span>Gluten-free</span></label>
+              <label class="option"><input type="checkbox" name="dietary" value="Other"><span>Other</span></label>
             </div>
-            <div class="timeline-item">
-              <time>21:00</time>
-              <div>
-                <h3>Official end</h3>
-                <p>The official programme concludes, with time to wind down afterwards.</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section class="register-layout" id="register">
-        <aside class="register-aside">
-          <p class="eyebrow">RSVP</p>
-          <h2>Reserve your place.</h2>
-          <p>
-            Let us know whether you can attend, whether you will bring a guest, and any dietary requirements we should consider.
-          </p>
-
-          <div class="aside-points">
-            <div>
-              <strong>Quick to complete</strong>
-              <span>Only the essential details are required.</span>
-            </div>
-            <div>
-              <strong>Guest option included</strong>
-              <span>You can register one spouse / +1.</span>
-            </div>
-            <div>
-              <strong>Secure submission</strong>
-              <span>Your registration is sent directly to our internal monday.com board.</span>
-            </div>
-          </div>
-        </aside>
-
-        <section class="register-card">
-          <div class="section-heading left compact">
-            <p class="eyebrow">REGISTRATION FORM</p>
-            <h2>Will you join us?</h2>
-            <p>Please complete the form below.</p>
-          </div>
-
-          <form id="rsvp-form">
-            <div class="grid two">
-              <label>First name <span>*</span><input name="first_name" required autocomplete="given-name"></label>
-              <label>Last name <span>*</span><input name="last_name" required autocomplete="family-name"></label>
-            </div>
-
-            <fieldset>
-              <legend>Will you attend? <span>*</span></legend>
-              <label class="choice choice-card"><input type="radio" name="attendance" value="Yes" required> <span>Yes, I'll be there! 🎄</span></label>
-              <label class="choice choice-card"><input type="radio" name="attendance" value="No"> <span>Unfortunately, I can't attend.</span></label>
-            </fieldset>
-
-            <fieldset id="plus-one-fieldset" class="conditional hidden" aria-hidden="true">
-              <legend>Will you bring a spouse / +1?</legend>
-              <div class="inline-choices">
-                <label class="choice choice-chip"><input type="radio" name="bringing_guest" value="No" checked> <span>No</span></label>
-                <label class="choice choice-chip"><input type="radio" name="bringing_guest" value="Yes"> <span>Yes</span></label>
-              </div>
-            </fieldset>
-
-            <label id="guest-name-wrapper" class="conditional hidden" aria-hidden="true">Name of your spouse / +1 <span>*</span>
-              <input name="guest_name" autocomplete="off" placeholder="First and last name">
-            </label>
-
-            <fieldset>
-              <legend>Dietary requirements</legend>
-              <div class="checkbox-grid">
-                <label class="choice choice-chip"><input type="checkbox" name="dietary" value="None"> <span>None</span></label>
-                <label class="choice choice-chip"><input type="checkbox" name="dietary" value="Vegetarian"> <span>Vegetarian</span></label>
-                <label class="choice choice-chip"><input type="checkbox" name="dietary" value="Vegan"> <span>Vegan</span></label>
-                <label class="choice choice-chip"><input type="checkbox" name="dietary" value="Gluten-free"> <span>Gluten-free</span></label>
-                <label class="choice choice-chip"><input type="checkbox" name="dietary" value="Other"> <span>Other</span></label>
-              </div>
-            </fieldset>
-
-            <label>Allergies or additional information
-              <textarea name="notes" rows="4" placeholder="Anything we should know?"></textarea>
-            </label>
-
-            <input class="hp" name="website" tabindex="-1" autocomplete="off">
-
-            <button class="button button-gold form-submit" type="submit" id="submit-button">Send registration</button>
-            <p class="form-note">Your response will be used only for organizing the Christmas party.</p>
-            <div id="form-message" class="message" role="status" aria-live="polite"></div>
-          </form>
-        </section>
-      </section>
+          </fieldset>
+          <label>Notes <span class="optional">(optional)</span><textarea name="notes" rows="3" placeholder="Allergies or anything we should know?"></textarea></label>
+          <input class="hp" name="website" tabindex="-1" autocomplete="off" aria-hidden="true">
+          <button class="button button-primary submit" type="submit" id="submit-button">Send registration <span aria-hidden="true">✦</span></button>
+          <p id="form-message" class="message" role="status" aria-live="polite"></p>
+          <p class="privacy">Your answers are used only to organise the JKS Christmas celebration.</p>
+        </form>
+      </div>
+      <div class="footer-star" aria-hidden="true">✦</div>
     </section>
   </main>
-  <script src="/app.js"></script>
 </body>
 </html>

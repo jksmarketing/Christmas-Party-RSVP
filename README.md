@@ -97,3 +97,11 @@ Before publishing, update:
 - RSVP deadline
 - Any final dietary options
 - Later: visual design / hero image
+
+## Minimal design with motion
+
+- Artwork is included at `public/assets/jks-christmas-hero.png`.
+- The page contains only the invitation, essential event details and the RSVP form.
+- Motion: subtle image entrance, animated star, intersection-based section reveal and guest-field reveal.
+- `prefers-reduced-motion` is respected; form submissions and monday.com mapping are unchanged.
+- Visible date/time/location reflect current planning and should be verified before inviting everyone.

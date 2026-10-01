@@ -72,3 +72,18 @@ form.addEventListener("submit", async (event) => {
     button.textContent = "Send registration";
   }
 });
+
+// Reveal only the next section as it enters the viewport.
+// Content stays visible if IntersectionObserver is unsupported.
+if ("IntersectionObserver" in window && !window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+  document.documentElement.classList.add("js-motion");
+  const observer = new IntersectionObserver((entries) => {
+    for (const entry of entries) {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("is-visible");
+        observer.unobserve(entry.target);
+      }
+    }
+  }, { threshold: 0.12, rootMargin: "0px 0px -30px 0px" });
+  document.querySelectorAll(".reveal").forEach((element) => observer.observe(element));
+}
