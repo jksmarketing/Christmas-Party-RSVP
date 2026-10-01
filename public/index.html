@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Christmas Party 2026</title>
+  <meta name="description" content="Christmas Party 2026 — registration">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+  <main>
+    <section class="hero">
+      <div class="snow" aria-hidden="true">✦　❄　✦　❄　✦</div>
+      <p class="eyebrow">YOU'RE INVITED</p>
+      <h1>Christmas<br><span>Party 2026</span></h1>
+      <p class="intro">Let's celebrate the year together with good food, good company and a little Christmas magic.</p>
+      <div class="event-meta">
+        <div><strong>18 December 2026</strong><span>Friday</span></div>
+        <div><strong>18:30</strong><span>until late</span></div>
+        <div><strong>Venue TBD</strong><span>Location</span></div>
+      </div>
+      <a class="button button-light" href="#register">Register now ↓</a>
+    </section>
+
+    <section class="content">
+      <div class="section-heading">
+        <p class="eyebrow">THE EVENING</p>
+        <h2>A night to remember.</h2>
+      </div>
+
+      <div class="timeline">
+        <div class="timeline-item"><time>18:30</time><div><h3>Welcome drinks</h3><p>Arrive, grab a drink and get into the Christmas spirit.</p></div></div>
+        <div class="timeline-item"><time>19:00</time><div><h3>Dinner</h3><p>Good food, good conversations and plenty of time together.</p></div></div>
+        <div class="timeline-item"><time>20:30</time><div><h3>Christmas activity</h3><p>Details to be announced.</p></div></div>
+        <div class="timeline-item"><time>22:00</time><div><h3>Music & drinks</h3><p>Relax, celebrate and enjoy the rest of the evening.</p></div></div>
+      </div>
+
+      <section class="register-card" id="register">
+        <div class="section-heading">
+          <p class="eyebrow">RSVP</p>
+          <h2>Will you join us?</h2>
+          <p>Please register so we can plan food, drinks and the evening accordingly.</p>
+        </div>
+
+        <form id="rsvp-form">
+          <div class="grid two">
+            <label>First name <span>*</span><input name="first_name" required autocomplete="given-name"></label>
+            <label>Last name <span>*</span><input name="last_name" required autocomplete="family-name"></label>
+          </div>
+
+          <label>Email <span>*</span><input type="email" name="email" required autocomplete="email"></label>
+
+          <fieldset>
+            <legend>Will you attend? <span>*</span></legend>
+            <label class="choice"><input type="radio" name="attendance" value="Yes" required> Yes, I'll be there! 🎄</label>
+            <label class="choice"><input type="radio" name="attendance" value="No"> Unfortunately, I can't attend.</label>
+          </fieldset>
+
+          <fieldset>
+            <legend>Dietary requirements</legend>
+            <label class="choice"><input type="checkbox" name="dietary" value="None"> None</label>
+            <label class="choice"><input type="checkbox" name="dietary" value="Vegetarian"> Vegetarian</label>
+            <label class="choice"><input type="checkbox" name="dietary" value="Vegan"> Vegan</label>
+            <label class="choice"><input type="checkbox" name="dietary" value="Gluten-free"> Gluten-free</label>
+            <label class="choice"><input type="checkbox" name="dietary" value="Other"> Other</label>
+          </fieldset>
+
+          <label>Allergies or additional information
+            <textarea name="notes" rows="4" placeholder="Anything we should know?"></textarea>
+          </label>
+
+          <!-- Honeypot anti-spam field. Leave empty. -->
+          <input class="hp" name="website" tabindex="-1" autocomplete="off">
+
+          <button class="button" type="submit" id="submit-button">Send registration</button>
+          <p class="form-note">Your response will be used only for organizing the Christmas party.</p>
+          <div id="form-message" class="message" role="status" aria-live="polite"></div>
+        </form>
+      </section>
+    </section>
+  </main>
+  <script src="/app.js"></script>
+</body>
+</html>
