@@ -51,13 +51,21 @@
             <label>Last name <span>*</span><input name="last_name" required autocomplete="family-name"></label>
           </div>
 
-          <label>Email <span>*</span><input type="email" name="email" required autocomplete="email"></label>
-
           <fieldset>
             <legend>Will you attend? <span>*</span></legend>
             <label class="choice"><input type="radio" name="attendance" value="Yes" required> Yes, I'll be there! 🎄</label>
             <label class="choice"><input type="radio" name="attendance" value="No"> Unfortunately, I can't attend.</label>
           </fieldset>
+
+          <fieldset id="plus-one-fieldset" class="conditional hidden" aria-hidden="true">
+            <legend>Will you bring a spouse / +1?</legend>
+            <label class="choice"><input type="radio" name="bringing_guest" value="No" checked> No</label>
+            <label class="choice"><input type="radio" name="bringing_guest" value="Yes"> Yes</label>
+          </fieldset>
+
+          <label id="guest-name-wrapper" class="conditional hidden" aria-hidden="true">Name of your spouse / +1 <span>*</span>
+            <input name="guest_name" autocomplete="off" placeholder="First and last name">
+          </label>
 
           <fieldset>
             <legend>Dietary requirements</legend>

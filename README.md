@@ -10,7 +10,7 @@ A small Christmas-party RSVP site using:
 
 - `public/index.html` — page
 - `public/style.css` — design
-- `public/app.js` — form submission
+- `public/app.js` — form submission and +1 field logic
 - `functions/api/register.js` — server-side form handler
 
 Cloudflare Pages Functions use the `/functions` directory for server-side routes.
@@ -51,45 +51,40 @@ In Cloudflare:
 - Build command: none
 - Build output directory: `public`
 
-## 4. Create the monday.com board
+## 4. monday.com board mapping used in this version
 
-A simple board could have:
+This version already uses the following monday.com column IDs:
 
-- Name (item name)
-- Email
-- Attendance
-- Dietary requirements
-- Notes
-- Registered at
+- Name (item name) → `name`
+- Status → `color_mm7q3wsc`
+- Dietary requirements → `text_mm7qpayv`
+- Notes → `long_text_mm7q2xpt` (only additional notes)
+- Registered → `date_mm7qz3mx`
+- +1? (checkbox) → `boolean_mm7qnsws`
+- Partner's name (text) → `text_mm7qrs2s`
 
-The exact column IDs are needed for the API mapping.
+The optional spouse / +1 is stored in its own columns. No email address is collected or sent.
 
 ## 5. Add Cloudflare secrets
 
 In your Cloudflare Pages project, add these environment variables/secrets:
 
 - `MONDAY_API_TOKEN` — keep this secret
-- `MONDAY_BOARD_ID`
+- `MONDAY_BOARD_ID` — use `5105282236`
 - `MONDAY_GROUP_ID` — optional
 
 Do NOT put the monday API token in HTML or browser JavaScript.
 
-## 6. Finish the monday mapping
+## 6. Current form behavior
 
-Open `functions/api/register.js` and replace the example `columnValues` mapping with the real monday column IDs.
-
-For example:
-
-```js
-const columnValues = {
-  email_column_id: { email: email, text: email },
-  attendance_column_id: { label: attendance },
-  dietary_column_id: dietary.join(", "),
-  notes_column_id: notes
-};
-```
-
-The exact format depends on the column types in your monday board.
+- Required fields: first name, last name, attendance
+- Attendance status is stored in monday.com Status
+- Dietary checkboxes are combined into a single text value for monday.com
+- Users can optionally bring one spouse / +1
+- If a +1 is selected, the guest name becomes required
+- A checked +1 checkbox and the partner name are saved to their own monday columns
+- Registrations are allowed multiple times (duplicates are not blocked)
+- If monday.com is not configured, the endpoint returns a clear error instead of a success message
 
 ## 7. Customize the party
 
@@ -100,5 +95,5 @@ Before publishing, update:
 - Program
 - Company/event name
 - RSVP deadline
-- Dietary questions
-- Any plus-one / activity / Secret Santa questions
+- Any final dietary options
+- Later: visual design / hero image

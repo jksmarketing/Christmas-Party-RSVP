@@ -8,8 +8,6 @@
  * - MONDAY_API_TOKEN
  * - MONDAY_BOARD_ID
  * - MONDAY_GROUP_ID (optional)
- *
- * Before going live, set the column IDs below to match your monday board.
  */
 export async function onRequestPost(context) {
   const { request, env } = context;
@@ -24,35 +22,47 @@ export async function onRequestPost(context) {
 
     const firstName = clean(form.get("first_name"));
     const lastName = clean(form.get("last_name"));
-    const email = clean(form.get("email"));
     const attendance = clean(form.get("attendance"));
+    const bringingGuest = clean(form.get("bringing_guest")) || "No";
+    const guestName = clean(form.get("guest_name"));
     const notes = clean(form.get("notes"));
     const dietary = form.getAll("dietary").map(clean).filter(Boolean);
 
-    if (!firstName || !lastName || !email || !attendance) {
+    if (!firstName || !lastName || !attendance) {
       return json({ error: "Please complete all required fields." }, 400);
     }
 
-    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
-      return json({ error: "Please enter a valid email address." }, 400);
+    if (!["Yes", "No"].includes(attendance)) {
+      return json({ error: "Please choose whether you will attend." }, 400);
+    }
+
+    if (!["Yes", "No"].includes(bringingGuest)) {
+      return json({ error: "Please choose a valid +1 option." }, 400);
+    }
+
+    if (bringingGuest === "Yes" && attendance !== "Yes") {
+      return json({ error: "A +1 can only be added if you are attending." }, 400);
+    }
+
+    if (bringingGuest === "Yes" && !guestName) {
+      return json({ error: "Please enter the name of your spouse / +1." }, 400);
     }
 
     if (!env.MONDAY_API_TOKEN || !env.MONDAY_BOARD_ID) {
-      // Safe response while the site is being designed/tested.
-      // No participant data is stored anywhere in this version.
       console.log("Monday.com is not configured yet.");
       return json({
-        message: "Thank you! The form works, but the monday.com connection still needs to be configured."
-      });
+        error: "The form is not connected to monday.com yet. Please add the Cloudflare MONDAY_API_TOKEN and MONDAY_BOARD_ID before using it live."
+      }, 503);
     }
 
-    // IMPORTANT:
-    // Replace these example column IDs with the actual IDs from your monday board.
+    const dietaryText = dietary.length ? dietary.join(", ") : "None specified";
     const columnValues = {
-      // email: { email: email, text: email },
-      // status: { label: attendance },
-      // dietary: dietary.join(", "),
-      // notes: notes
+      color_mm7q3wsc: { label: attendance },
+      text_mm7qpayv: dietaryText,
+      long_text_mm7q2xpt: { text: notes },
+      date_mm7qz3mx: { date: new Date().toISOString().slice(0, 10) },
+      boolean_mm7qnsws: { checked: bringingGuest === "Yes" ? "true" : "false" },
+      text_mm7qrs2s: bringingGuest === "Yes" ? guestName : ""
     };
 
     const mutation = `
@@ -90,7 +100,7 @@ export async function onRequestPost(context) {
 
     const mondayResult = await mondayResponse.json();
 
-    if (!mondayResponse.ok || mondayResult.errors) {
+    if (!mondayResponse.ok || mondayResult.errors?.length || !mondayResult.data?.create_item?.id) {
       console.error("monday.com error", mondayResult);
       return json({ error: "We couldn't save your registration. Please try again later." }, 502);
     }

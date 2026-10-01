@@ -84,6 +84,8 @@ legend { margin-bottom: 10px; }
 .message { margin-top: 18px; font-weight: 600; }
 .message.success { color: var(--green-2); }
 .message.error { color: var(--red); }
+
+.conditional.hidden { display: none; }
 .hp { position: absolute; left: -10000px; opacity: 0; }
 button:disabled { opacity: .55; cursor: wait; }
 @media (max-width: 650px) {
