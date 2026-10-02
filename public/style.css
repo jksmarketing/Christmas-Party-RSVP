@@ -199,48 +199,30 @@ body.dialog-open {overflow:hidden;}
 }
 
 
-/* Arabesque refinement: remove motifs interfering with the RSVP content. */
+/* Botanical arabesques inspired by the provided floral border. Keep the RSVP content clear. */
 .registration-info::after,
-.registration-layout .form-shell::after { display:none!important; }
+.registration-layout .form-shell::after {display:none!important;}
 
-/* Confirmation only: gilded arabesque corners stay clear of all typography and actions. */
-.confirm-card {
-  isolation:isolate;
-  background-color:#101b33;
-  background-image:
-    url('/assets/ornament-arch-corner.svg'),
-    url('/assets/ornament-arch-corner.svg'),
-    url('/assets/ornament-arch-corner.svg'),
-    url('/assets/ornament-arch-corner.svg'),
-    radial-gradient(ellipse at 50% 0,rgba(169,97,43,.20),transparent 53%),
-    linear-gradient(150deg,#172440,#090f20);
-  background-repeat:no-repeat;
-  background-size:165px 165px,165px 165px,110px 110px,110px 110px,100% 100%,100% 100%;
-  background-position:left 14px top 14px,right 14px top 14px,left 14px bottom 14px,right 14px bottom 14px,center,center;
+/* Floral frame belongs to confirmation edges, never underneath interactive text. */
+.confirm-card{
+ isolation:isolate;
+ background-color:#101b33;
+ background-image:
+   url('/assets/arabesque-floral-corner.svg'),
+   url('/assets/arabesque-floral-corner-right.svg'),
+   url('/assets/arabesque-floral-corner-bottom.svg'),
+   url('/assets/arabesque-floral-corner-bottom-right.svg'),
+   radial-gradient(ellipse at 50% 0,rgba(169,97,43,.20),transparent 53%),
+   linear-gradient(150deg,#172440,#090f20);
+ background-repeat:no-repeat;
+ background-size:220px 220px,220px 220px,155px 155px,155px 155px,100% 100%,100% 100%;
+ background-position:left 8px top 8px,right 8px top 8px,left 8px bottom 8px,right 8px bottom 8px,center,center;
 }
-.confirm-card::before {
-  content:"";
-  position:absolute;
-  inset:0;
-  border-radius:inherit;
-  border:1px solid rgba(249,207,135,.13);
-  pointer-events:none;
-}
-.confirm-card::after {
-  content:"";
-  display:block;
-  width:250px;
-  max-width:55%;
-  height:23px;
-  margin:1.05rem auto -1.35rem;
-  background:url('/assets/ornament-modal-divider.svg') center/contain no-repeat;
-  opacity:.68;
-  pointer-events:none;
-}
-@media(max-width:760px) {
-  .confirm-card {
-    background-size:92px 92px,92px 92px,64px 64px,64px 64px,100% 100%,100% 100%;
-    background-position:left 5px top 7px,right 5px top 7px,left 4px bottom 5px,right 4px bottom 5px,center,center;
-  }
-  .confirm-card::after {width:170px;height:19px;margin:.7rem auto -.45rem;}
+.confirm-card::before{content:"";position:absolute;inset:9px;border-radius:inherit;border:1px solid rgba(240,194,117,.26);pointer-events:none;}
+.confirm-card::after{content:"";display:block;width:280px;max-width:48%;height:31px;margin:1rem auto -1.25rem;background:url('/assets/arabesque-floral-divider.svg') center/contain no-repeat;opacity:.83;pointer-events:none;}
+/* Muted dark underlay around the text, keeping flowerwork in margins. */
+.confirm-card>.confirm-grid,.confirm-card>.confirm-lead,.confirm-card>h2{position:relative;z-index:1}
+@media (max-width:760px){
+ .confirm-card{background-size:100px 100px,100px 100px,72px 72px,72px 72px,100% 100%,100% 100%;background-position:left 4px top 5px,right 4px top 5px,left 3px bottom 4px,right 3px bottom 4px,center,center;}
+ .confirm-card::after{width:170px;height:22px;margin:.65rem auto -.5rem;}
 }

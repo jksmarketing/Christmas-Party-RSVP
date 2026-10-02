@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 360" fill="none">
+<defs>
+ <linearGradient id="gold" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#FBE4AD"/><stop offset=".48" stop-color="#D7A65A"/><stop offset="1" stop-color="#F0CD8A"/></linearGradient>
+ <symbol id="flower" viewBox="-30 -30 60 60">
+  <g fill="#D6AA66" stroke="#F3D69B" stroke-width=".7"><path d="M0-27Q11-15 0-4Q-11-15 0-27Z"/><path d="M27 0Q15 11 4 0Q15-11 27 0Z"/><path d="M0 27Q-11 15 0 4Q11 15 0 27Z"/><path d="M-27 0Q-15-11-4 0Q-15 11-27 0Z"/><path d="M20-20Q19-7 6-6Q7-19 20-20Z"/><path d="M20 20Q7 19 6 6Q19 7 20 20Z"/><path d="M-20 20Q-19 7-6 6Q-7 19-20 20Z"/><path d="M-20-20Q-7-19-6-6Q-19-7-20-20Z"/></g><circle r="8" fill="#133B56" stroke="#FADEA6" stroke-width="2"/><circle r="3.1" fill="#F7DB9D"/>
+ </symbol>
+ <symbol id="leaf" viewBox="-25 -14 50 28"><path d="M-22 0Q-2-23 23-1Q2 17-22 0Z" fill="#C8A165" fill-opacity=".68" stroke="#F8DDA0" stroke-width="1.3"/><path d="M-18 0Q0-1 18 0" stroke="#0C2F41" stroke-width=".95"/></symbol>
+</defs>
+<!-- double gilded perimeter, two graceful corner turns -->
+<path d="M5 354V58Q5 5 58 5H354" stroke="url(#gold)" stroke-width="2.6" opacity=".9"/>
+<path d="M17 350V62Q17 17 62 17H350" stroke="#A7C0AE" stroke-width=".85" opacity=".48"/>
+<path d="M35 322V78Q35 35 78 35H322" stroke="url(#gold)" stroke-width="1.6" opacity=".7"/>
+<!-- traditional vegetal spirals: connected rather than detached symbols -->
+<g stroke="url(#gold)" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+ <path d="M27 262C38 222 64 218 68 175S89 125 127 122S180 93 152 70C137 56 107 65 111 86C114 101 133 95 130 84"/>
+ <path d="M74 27C111 37 128 72 172 72S235 81 249 121C258 149 300 152 313 129C321 115 303 101 288 112C282 118 290 126 297 122"/>
+ <path d="M29 307C76 303 94 273 89 247C83 217 113 196 141 205C159 211 161 232 145 244C135 251 126 241 130 233" opacity=".8"/>
+ <path d="M220 28C219 63 242 81 276 86C298 89 312 73 303 58C295 43 281 54 284 63" opacity=".72"/>
+ <path d="M99 148C113 166 110 189 96 203M175 75C197 94 199 113 185 134M56 229C79 211 93 201 114 200" stroke-width="1.4" opacity=".75"/>
+</g>
+<!-- Leaves following the vine rather than geometric lattice -->
+<use href="#leaf" x="52" y="215" width="36" height="22" transform="rotate(-50 70 226)"/>
+<use href="#leaf" x="54" y="155" width="35" height="21" transform="rotate(44 70 166)"/>
+<use href="#leaf" x="93" y="133" width="35" height="20" transform="rotate(-20 110 143)"/>
+<use href="#leaf" x="126" y="115" width="39" height="23" transform="rotate(-42 145 126)"/>
+<use href="#leaf" x="177" y="65" width="39" height="23" transform="rotate(25 196 77)"/>
+<use href="#leaf" x="214" y="79" width="36" height="21" transform="rotate(-35 232 89)"/>
+<use href="#leaf" x="254" y="89" width="40" height="22" transform="rotate(36 274 100)"/>
+<use href="#leaf" x="68" y="276" width="36" height="22" transform="rotate(-25 86 287)"/>
+<use href="#leaf" x="112" y="198" width="36" height="22" transform="rotate(48 130 209)"/>
+<use href="#flower" x="53" y="45" width="64" height="64"/>
+<use href="#flower" x="213" y="93" width="49" height="49" transform="rotate(16 237 117)"/>
+<use href="#flower" x="66" y="263" width="50" height="50" transform="rotate(-15 91 288)"/>
+<!-- fine gold curls and small blossoms -->
+<g stroke="#EFCB88" stroke-width="1.25" opacity=".78"><path d="M44 118C60 117 67 105 63 92C58 82 46 89 49 97"/><path d="M171 31C175 52 159 59 146 55C137 52 143 41 150 45"/><path d="M37 336C56 328 60 317 54 306"/><path d="M326 37C307 45 305 56 315 64"/></g>
+<g fill="#F6D89A"><circle cx="120" cy="55" r="2.2"/><circle cx="192" cy="100" r="2"/><circle cx="39" cy="190" r="2"/><circle cx="138" cy="176" r="1.6"/><circle cx="274" cy="47" r="2"/><circle cx="48" cy="272" r="1.8"/></g>
+</svg>
