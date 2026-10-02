@@ -138,3 +138,18 @@ body.dialog-open {overflow:hidden;}
   .confirm-details {padding:.6rem 0;gap:.4rem;margin-bottom:.65rem}
   .confirm-actions .button,.plus-one-reminder .button {min-height:2.65rem;padding:.55rem 1rem}
 }
+
+/* Phone RSVP: keep event facts available, but let the main CTA land directly at the form. */
+@media (max-width: 640px) {
+  .registration-info h2,
+  .registration-note { display: none; }
+  .rsvp-section { padding-top: 1.15rem; }
+  .registration-layout { gap: 1rem; }
+  .registration-info { padding: .2rem 0 0; }
+  .registration-info .eyebrow { margin: 0 0 .5rem; }
+  .registration-intro { margin: 0 0 .6rem; font-size: .83rem; line-height: 1.45; }
+  .detail-list { gap: .25rem; }
+  .detail-list > div { padding: .3rem 0 .5rem; }
+  .detail-list dd { font-size: 1.3rem; }
+  #anmeldung { scroll-margin-top: 12px; }
+}

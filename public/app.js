@@ -145,3 +145,20 @@ if ("IntersectionObserver" in window && !window.matchMedia("(prefers-reduced-mot
   }, { threshold: 0.12, rootMargin: "0px 0px -30px 0px" });
   document.querySelectorAll(".reveal").forEach((element) => observer.observe(element));
 }
+
+// On phones the event information precedes the form. Jump over it when the
+// visitor taps the primary invitation CTA, without changing desktop behaviour.
+const invitationCTA = document.querySelector('.hero-bottom a[href="#register"]');
+const mobileForm = document.getElementById('anmeldung');
+if (invitationCTA && mobileForm) {
+  invitationCTA.addEventListener('click', (event) => {
+    if (!window.matchMedia('(max-width: 640px)').matches) return;
+    event.preventDefault();
+    // Ensure reveal animations cannot leave the form invisible after the jump.
+    mobileForm.classList.add('is-visible');
+    mobileForm.scrollIntoView({
+      behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth',
+      block: 'start'
+    });
+  });
+}
