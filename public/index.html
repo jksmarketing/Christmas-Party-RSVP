@@ -3,12 +3,15 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#112a22">
+  <meta name="theme-color" content="#0a1326">
   <title>A Real JKS Christmas — Anmeldung</title>
   <meta name="description" content="Anmeldung für A Real JKS Christmas 2026.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/x-icon" href="/favicon.ico">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
   <link rel="stylesheet" href="/style.css">
   <script defer src="/app.js"></script>
 </head>
@@ -16,6 +19,9 @@
   <main>
     <section class="hero" aria-label="A Real JKS Christmas Einladung">
       <div class="hero-art" role="img" aria-label="A Real JKS Christmas: drei goldene Könige formen die Spitzen einer Krone vor einer sternenklaren Wüstenlandschaft"></div>
+      <div class="hero-header">
+        <img src="/assets/jks-logo-white.png" alt="JKS" class="hero-logo">
+      </div>
       <div class="hero-bottom">
         <span class="hero-spark" aria-hidden="true">✦</span>
         <p class="hero-lead">Ein gemeinsamer Abend unter weihnachtlichen Sternen.</p>
@@ -36,10 +42,7 @@
 
     <section class="rsvp-section" id="register">
       <div class="form-shell reveal">
-        <div class="form-logo-wrap">
-          <img src="/assets/jks-logo-orange.png" alt="JKS" class="form-logo">
-        </div>
-        <h1>Bist du dabei?</h1>
+        <h1>Feierst du mit uns?</h1>
         <p class="form-intro">Bitte fülle das Formular aus.</p>
         <form id="rsvp-form">
           <div class="two-cols">
@@ -64,17 +67,17 @@
             <input name="guest_name" autocomplete="off" placeholder="Vor- und Nachname" maxlength="200">
           </label>
           <div id="attending-details" class="conditional hidden" aria-hidden="true">
-          <fieldset>
-            <legend>Verpflegungswünsche</legend>
-            <div class="option-row dietary-options">
-              <label class="option"><input type="checkbox" name="dietary" value="Keine"><span>Keine</span></label>
-              <label class="option"><input type="checkbox" name="dietary" value="Vegetarisch"><span>Vegetarisch</span></label>
-              <label class="option"><input type="checkbox" name="dietary" value="Vegan"><span>Vegan</span></label>
-              <label class="option"><input type="checkbox" name="dietary" value="Glutenfrei"><span>Glutenfrei</span></label>
-              <label class="option"><input type="checkbox" name="dietary" value="Andere"><span>Andere</span></label>
-            </div>
-          </fieldset>
-          <label>Notizen <span class="optional">(optional)</span><textarea name="notes" rows="3" placeholder="Allergien oder sonstige Hinweise?"></textarea></label>
+            <fieldset>
+              <legend>Verpflegungswünsche</legend>
+              <div class="option-row dietary-options">
+                <label class="option"><input type="checkbox" name="dietary" value="Keine"><span>Keine</span></label>
+                <label class="option"><input type="checkbox" name="dietary" value="Vegetarisch"><span>Vegetarisch</span></label>
+                <label class="option"><input type="checkbox" name="dietary" value="Vegan"><span>Vegan</span></label>
+                <label class="option"><input type="checkbox" name="dietary" value="Glutenfrei"><span>Glutenfrei</span></label>
+                <label class="option"><input type="checkbox" name="dietary" value="Andere"><span>Andere</span></label>
+              </div>
+            </fieldset>
+            <label>Notizen <span class="optional">(optional)</span><textarea name="notes" rows="3" placeholder="Allergien oder sonstige Hinweise?"></textarea></label>
           </div>
           <input class="hp" name="website" tabindex="-1" autocomplete="off" aria-hidden="true">
           <button class="button button-primary submit" type="submit" id="submit-button">Anmeldung senden <span aria-hidden="true">✦</span></button>
@@ -82,37 +85,8 @@
           <p class="privacy">Deine Angaben werden ausschliesslich für die Organisation der JKS Weihnachtsfeier verwendet.</p>
         </form>
       </div>
+      <div class="footer-star" aria-hidden="true">✦</div>
     </section>
   </main>
-
-  <footer class="site-footer" aria-label="JKS Footer">
-    <div class="footer-main">
-      <div class="footer-grid">
-        <div class="footer-logo-block">
-          <a href="https://www.jks.ch" target="_blank" rel="noopener noreferrer" aria-label="JKS Website öffnen">
-            <img src="/assets/jks-logo-orange.png" alt="JKS" class="footer-logo">
-          </a>
-          <div class="footer-socials" aria-label="JKS Social Media">
-            <a href="https://www.facebook.com/JKSEAG/" target="_blank" rel="noopener noreferrer" aria-label="Facebook"><img src="/assets/icon-facebook-white-v2.png" alt=""></a>
-            <a href="https://www.youtube.com/channel/UCcMOkVDwXvTiYgRhopyA9GQ/featured" target="_blank" rel="noopener noreferrer" aria-label="YouTube"><img src="/assets/icon-youtube-white-v2.png" alt=""></a>
-            <a href="https://www.linkedin.com/company/11246103/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><img src="/assets/icon-linkedin-white-v2.png" alt=""></a>
-            <a href="https://www.instagram.com/jks__group/" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><img src="/assets/icon-instagram-white-v2.png" alt=""></a>
-          </div>
-        </div>
-        <div class="footer-contact">
-          <p><a href="tel:+41447828282">+41 44 782 82 82</a></p>
-          <p><a href="mailto:info@jks.ch">info@jks.ch</a></p>
-          <p>JKS Engineering AG</p>
-          <p>Grabenstrasse 1a</p>
-          <p>8606 Nänikon,</p>
-          <p>Switzerland</p>
-        </div>
-        <div class="footer-slogan">
-          <p>Transforming your<br>good ideas into great<br><span>solutions</span></p>
-        </div>
-      </div>
-    </div>
-    <div class="footer-bar">© 2026 JKS Group. Alle Rechte vorbehalten. &nbsp;|&nbsp; <a href="https://www.jks.ch" target="_blank" rel="noopener noreferrer">jks.ch</a></div>
-  </footer>
 </body>
 </html>
