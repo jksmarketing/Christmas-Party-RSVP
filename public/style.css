@@ -132,3 +132,21 @@
   .js-motion .reveal:not(.is-visible){opacity:1!important;transform:none!important;filter:none!important}
   .hero-bottom .button-primary::before,.submit::before{display:none}
 }
+
+/* Full-bleed opening artwork: fill the complete viewport width, no framed image.
+   Preserve the whole composition and its natural aspect ratio at every screen size. */
+html,body,main{width:100%;margin:0}
+.hero{width:100%;max-width:none;margin:0;padding:0}
+.hero-art{
+  position:relative;
+  inset:auto;
+  display:block;
+  width:100%;
+  max-width:none;
+  height:auto;
+  object-fit:contain;
+  margin:0;
+  border:0;
+  border-radius:0;
+}
+@media (max-width:640px){.hero-art{width:100%;max-width:none;height:auto;object-fit:contain;margin:0}}
