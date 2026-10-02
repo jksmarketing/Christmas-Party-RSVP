@@ -88,7 +88,7 @@ body.dialog-open {overflow:hidden;}
   box-shadow:inset 0 1px 0 rgba(255,255,255,.045), inset 0 0 0 1px rgba(255,226,166,.05), 0 28px 64px rgba(0,0,0,.18);
   overflow:hidden}
 .registration-info::before{content:"";position:absolute;left:50%;top:1rem;transform:translateX(-50%);width:min(84%,390px);height:40px;background:center/contain no-repeat url('/assets/ornament-divider.svg');opacity:.82;pointer-events:none;filter:drop-shadow(0 0 8px rgba(232,185,104,.08))}
-.registration-info::after{content:"";position:absolute;right:-.55rem;bottom:-.55rem;width:188px;height:188px;background:center/contain no-repeat url('/assets/ornament-corner.svg');opacity:.28;pointer-events:none;filter:drop-shadow(0 0 24px rgba(232,185,104,.06))}
+.registration-info::after{content:"";position:absolute;right:-.35rem;bottom:-.55rem;width:156px;height:156px;background:center/contain no-repeat url('/assets/ornament-corner.svg');opacity:.16;pointer-events:none;filter:drop-shadow(0 0 18px rgba(232,185,104,.05))}
 .registration-info .eyebrow{padding-top:1.6rem;margin-bottom:1rem;text-align:center}
 .registration-info h2{text-wrap:balance}
 .registration-intro{position:relative;z-index:1;color:#ddd0c0;max-width:28rem;margin:0 0 2.15rem}
@@ -100,7 +100,7 @@ body.dialog-open {overflow:hidden;}
   linear-gradient(155deg,rgba(21,34,61,.76),rgba(11,19,37,.5));
   box-shadow:inset 0 1px 0 rgba(255,255,255,.04), inset 0 0 0 1px rgba(255,226,166,.04), 0 28px 60px rgba(0,0,0,.17);overflow:hidden}
 .registration-layout .form-shell::before{content:"";position:absolute;left:50%;top:.95rem;transform:translateX(-50%);width:min(78%,330px);height:34px;background:center/contain no-repeat url('/assets/ornament-divider.svg');opacity:.52;pointer-events:none}
-.registration-layout .form-shell::after{content:"";position:absolute;left:-.4rem;top:auto;bottom:-.55rem;width:170px;height:170px;background:center/contain no-repeat url('/assets/ornament-corner.svg');opacity:.18;pointer-events:none;transform:scaleX(-1)}
+.registration-layout .form-shell::after{content:"";position:absolute;left:auto;right:-.25rem;top:auto;bottom:-.55rem;width:150px;height:150px;background:center/contain no-repeat url('/assets/ornament-corner.svg');opacity:.12;pointer-events:none;transform:none}
 .form-shell h1{position:relative;padding-top:1.35rem}
 @media(max-width:900px){
   .registration-layout::before{height:220px;bottom:0}
@@ -109,14 +109,14 @@ body.dialog-open {overflow:hidden;}
     radial-gradient(circle at 74% 78%,rgba(232,185,104,.06),transparent 33%),
     linear-gradient(145deg,rgba(15,27,52,.72),rgba(9,16,33,.42));}
   .registration-info::before{top:.78rem;width:min(78%,330px);height:34px;opacity:.72}
-  .registration-info::after{width:150px;height:150px;right:-.45rem;bottom:-.35rem;opacity:.2}
+  .registration-info::after{width:118px;height:118px;right:-.3rem;bottom:-.3rem;opacity:.12}
   .registration-info .eyebrow{padding-top:1.28rem}
   .registration-layout .form-shell{padding:1.45rem 1.2rem 1.6rem;background:
     linear-gradient(180deg,rgba(255,255,255,.024),rgba(255,255,255,0)),
     radial-gradient(circle at 18% 18%,rgba(232,185,104,.055),transparent 30%),
     linear-gradient(155deg,rgba(21,34,61,.76),rgba(11,19,37,.5));}
   .registration-layout .form-shell::before{top:.82rem;width:min(72%,280px);height:30px;opacity:.38}
-  .registration-layout .form-shell::after{width:136px;height:136px;opacity:.14;left:auto;right:-.45rem;top:auto;bottom:-.45rem;transform:none}
+  .registration-layout .form-shell::after{width:112px;height:112px;opacity:.09;left:auto;right:-.25rem;top:auto;bottom:-.3rem;transform:none}
   .form-shell h1{padding-top:1.08rem}
 }
 @media(max-width:620px){
@@ -125,13 +125,13 @@ body.dialog-open {overflow:hidden;}
     linear-gradient(180deg,rgba(255,255,255,.024),rgba(255,255,255,0)),
     linear-gradient(145deg,rgba(15,27,52,.72),rgba(9,16,33,.42));}
   .registration-info::before{top:.7rem;width:220px;height:28px;opacity:.68}
-  .registration-info::after{width:112px;height:112px;right:-.35rem;bottom:-.25rem;opacity:.17}
+  .registration-info::after{display:none!important}
   .registration-info .eyebrow{padding-top:1.04rem}
   .registration-layout .form-shell{padding:1.25rem 1rem 1.45rem;border-radius:1.15rem;background:
     linear-gradient(180deg,rgba(255,255,255,.022),rgba(255,255,255,0)),
     linear-gradient(155deg,rgba(21,34,61,.76),rgba(11,19,37,.5));}
   .registration-layout .form-shell::before{top:.72rem;width:210px;height:26px;opacity:.34}
-  .registration-layout .form-shell::after{width:100px;height:100px;right:-.25rem;bottom:-.25rem;opacity:.1;transform:none}
+  .registration-layout .form-shell::after{display:none!important}
   .form-shell h1{padding-top:.95rem}
 }
 
@@ -199,30 +199,33 @@ body.dialog-open {overflow:hidden;}
 }
 
 
-/* Botanical arabesques inspired by the provided floral border. Keep the RSVP content clear. */
-.registration-info::after,
-.registration-layout .form-shell::after {display:none!important;}
-
-/* Floral frame belongs to confirmation edges, never underneath interactive text. */
+/* Continuous botanical frame: leaf-based arabesques shared with the main page.
+   Decorative layers stay outside the text flow and cannot intercept clicks. */
+.registration-info::after,.registration-layout .form-shell::after{display:block!important}
 .confirm-card{
- isolation:isolate;
- background-color:#101b33;
- background-image:
-   url('/assets/arabesque-floral-corner.svg'),
-   url('/assets/arabesque-floral-corner-right.svg'),
-   url('/assets/arabesque-floral-corner-bottom.svg'),
-   url('/assets/arabesque-floral-corner-bottom-right.svg'),
-   radial-gradient(ellipse at 50% 0,rgba(169,97,43,.20),transparent 53%),
-   linear-gradient(150deg,#172440,#090f20);
- background-repeat:no-repeat;
- background-size:220px 220px,220px 220px,155px 155px,155px 155px,100% 100%,100% 100%;
- background-position:left 8px top 8px,right 8px top 8px,left 8px bottom 8px,right 8px bottom 8px,center,center;
+  isolation:isolate;
+  background:radial-gradient(ellipse at 50% 0,rgba(169,97,43,.18),transparent 54%),linear-gradient(150deg,#172440,#090f20);
 }
-.confirm-card::before{content:"";position:absolute;inset:9px;border-radius:inherit;border:1px solid rgba(240,194,117,.26);pointer-events:none;}
-.confirm-card::after{content:"";display:block;width:280px;max-width:48%;height:31px;margin:1rem auto -1.25rem;background:url('/assets/arabesque-floral-divider.svg') center/contain no-repeat;opacity:.83;pointer-events:none;}
-/* Muted dark underlay around the text, keeping flowerwork in margins. */
-.confirm-card>.confirm-grid,.confirm-card>.confirm-lead,.confirm-card>h2{position:relative;z-index:1}
-@media (max-width:760px){
- .confirm-card{background-size:100px 100px,100px 100px,72px 72px,72px 72px,100% 100%,100% 100%;background-position:left 4px top 5px,right 4px top 5px,left 3px bottom 4px,right 3px bottom 4px,center,center;}
- .confirm-card::after{width:170px;height:22px;margin:.65rem auto -.5rem;}
+.confirm-card::before{
+  content:"";position:absolute;inset:8px;border-radius:inherit;pointer-events:none;z-index:0;
+  background-image:url('/assets/floral-border-horizontal.svg'),url('/assets/floral-border-horizontal.svg'),url('/assets/floral-border-vertical.svg'),url('/assets/floral-border-vertical.svg');
+  background-repeat:repeat-x,repeat-x,repeat-y,repeat-y;
+  background-size:180px 62px,180px 62px,62px 180px,62px 180px;
+  background-position:center top,center bottom,left center,right center;
+  opacity:.68;
+}
+.confirm-card::after{
+  content:"";position:absolute;inset:8px;border-radius:inherit;pointer-events:none;z-index:0;
+  background-image:url('/assets/floral-border-corner.svg'),url('/assets/floral-border-corner-right.svg'),url('/assets/floral-border-corner-bottom-left.svg'),url('/assets/floral-border-corner-bottom-right.svg');
+  background-repeat:no-repeat;
+  background-size:126px 126px;
+  background-position:left top,right top,left bottom,right bottom;
+  /* Mirrors/rotations belong in standalone image assets, not CSS backgrounds. */
+}
+.confirm-card>.confirm-grid,.confirm-card>.confirm-lead,.confirm-card>h2,.confirm-card>.confirm-star{position:relative;z-index:1}
+.confirm-close{z-index:3;background:rgba(10,19,38,.66);border-radius:50%}
+@media(max-width:760px){
+  .confirm-card::before{inset:4px;background-size:180px 42px,180px 42px,40px 180px,40px 180px;opacity:.42}
+  .confirm-card::after{inset:4px;background-size:82px 82px;opacity:.56}
+  .confirm-card>.confirm-grid,.confirm-card>.confirm-lead,.confirm-card>h2{padding-left:7px;padding-right:7px}
 }

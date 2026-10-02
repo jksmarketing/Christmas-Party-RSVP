@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 180 62" width="180" height="62" fill="none">
+<defs><linearGradient id="g" x1="0" y1="0" x2="180" y2="0" gradientUnits="userSpaceOnUse"><stop stop-color="#A16E3A"/><stop offset=".5" stop-color="#F2CD88"/><stop offset="1" stop-color="#A16E3A"/></linearGradient></defs>
+<path d="M0 7H180M0 55H180" stroke="url(#g)" stroke-width=".9" opacity=".54"/>
+<path d="M0 31c18 0 24-14 42-14 15 0 23 14 40 14M180 31c-18 0-24-14-42-14-15 0-23 14-40 14" stroke="url(#g)" stroke-width="1.35" opacity=".92"/>
+<path d="M23 25c8-8 17-7 22 0M23 37c8 8 17 7 22 0" stroke="url(#g)" stroke-width="1.05" opacity=".72"/>
+<path d="M157 25c-8-8-17-7-22 0M157 37c-8 8-17 7-22 0" stroke="url(#g)" stroke-width="1.05" opacity=".72"/>
+<g fill="#203851" stroke="#D5A764" stroke-width="1">
+<path d="M33 20c-9-8-18-5-18 4 8 4 13 4 18-4Z"/>
+<path d="M33 42c-9 8-18 5-18-4 8-4 13-4 18 4Z"/>
+<path d="M147 20c9-8 18-5 18 4-8 4-13 4-18-4Z"/>
+<path d="M147 42c9 8 18 5 18-4-8-4-13-4-18 4Z"/>
+<path d="M67 22c-8-8-16-5-16 3 7 4 12 4 16-3Z"/>
+<path d="M67 40c-8 8-16 5-16-3 7-4 12-4 16 3Z"/>
+<path d="M113 22c8-8 16-5 16 3-7 4-12 4-16-3Z"/>
+<path d="M113 40c8 8 16 5 16-3-7-4-12-4-16 3Z"/>
+</g>
+<path d="M0 31H180" stroke="#F0C783" stroke-width=".55" opacity=".32"/>
+<g transform="translate(90 31)">
+<path d="M0-12l3.4 6.6L10 0 3.4 5.4 0 12-3.4 5.4-10 0l6.6-5.4L0-12Z" fill="#F4D598" opacity=".9"/>
+<path d="M-24 0c6 0 10-4 14-4s8 4 14 4M24 0c-6 0-10-4-14-4S2 0-4 0" stroke="url(#g)" stroke-width="1.05" opacity=".9"/>
+</g>
+</svg>
