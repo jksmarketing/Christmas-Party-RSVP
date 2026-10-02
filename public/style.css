@@ -26,15 +26,7 @@ linear-gradient(90deg,rgba(8,14,29,.56) 0%,rgba(8,14,29,.08) 17%,rgba(8,14,29,0)
 .hero-vignette {inset:0;height:auto;background:radial-gradient(ellipse 60% 45% at 50% 86%,rgba(222,160,77,.10),transparent 72%);}
 .hero-bottom::before {inset:auto 0 -2.5rem;height:16rem;width:auto;left:0;transform:none;background:radial-gradient(ellipse at 50% 60%,rgba(229,169,89,.12),transparent 72%);}
 /* Desktop: event brief and form in one synchronized viewport. */
-.registration-layout {max-width:1270px;margin:0 auto;display:grid;grid-template-columns:minmax(280px,.82fr) minmax(480px,1.18fr);gap:clamp(2rem,5vw,6.6rem);align-items:start;position:relative;}
-.registration-layout::before{content:"";position:absolute;left:-1rem;right:-1rem;bottom:1.2rem;height:220px;pointer-events:none;background:radial-gradient(ellipse at 32% 50%,rgba(232,185,104,.07),transparent 42%),radial-gradient(ellipse at 74% 38%,rgba(232,185,104,.05),transparent 40%);opacity:.9;}
-.registration-info,.registration-layout .form-shell{position:relative;}
-.registration-info::before{content:"";position:absolute;top:-.45rem;right:min(1.2rem,4vw);width:148px;height:48px;pointer-events:none;opacity:.52;background:center/contain no-repeat url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%20240%2080%22%20fill%3D%22none%22%3E%3Cpath%20d%3D%22M8%2040h46c16%200%2024-14%2032-14%2010%200%2016%2014%2034%2014s22-14%2034-14c14%200%2017%2014%2031%2014h47%22%20stroke%3D%22%23E8B968%22%20stroke-width%3D%222.6%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%20opacity%3D%22.95%22/%3E%3Cpath%20d%3D%22M108%2040c8-8%209-18%202-24%2014%202%2022%2016%2010%2028-9%209-12%2016-3%2024-16-3-23-16-9-28Z%22%20fill%3D%22%23E8B968%22%20opacity%3D%22.85%22/%3E%3Ccircle%20cx%3D%22120%22%20cy%3D%2240%22%20r%3D%223.4%22%20fill%3D%22%23FFE2A6%22/%3E%3C/svg%3E");}
-.registration-info::after{content:"";position:absolute;left:-1rem;bottom:-.9rem;width:92px;height:92px;pointer-events:none;opacity:.34;background:center/contain no-repeat url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%20120%20120%22%20fill%3D%22none%22%3E%3Cpath%20d%3D%22M60%2013c7%2015%2015%2023%2030%2030-15%207-23%2015-30%2030-7-15-15-23-30-30%2015-7%2023-15%2030-30Z%22%20stroke%3D%22%23E8B968%22%20stroke-width%3D%222.5%22%20opacity%3D%22.9%22/%3E%3Cpath%20d%3D%22M60%2077c7%2015%2015%2023%2030%2030-15%207-23%2015-30%2030-7-15-15-23-30-30%2015-7%2023-15%2030-30Z%22%20stroke%3D%22%23E8B968%22%20stroke-width%3D%222.5%22%20opacity%3D%22.55%22%20transform%3D%22translate%280%2C-34%29%22/%3E%3Ccircle%20cx%3D%2260%22%20cy%3D%2260%22%20r%3D%227%22%20fill%3D%22%23FFE2A6%22%20opacity%3D%22.95%22/%3E%3C/svg%3E");}
-.registration-layout .form-shell{overflow:hidden;}
-.registration-layout .form-shell::before{content:"";position:absolute;top:1.05rem;right:1.1rem;width:118px;height:38px;pointer-events:none;opacity:.26;background:center/contain no-repeat url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%20240%2080%22%20fill%3D%22none%22%3E%3Cpath%20d%3D%22M8%2040h46c16%200%2024-14%2032-14%2010%200%2016%2014%2034%2014s22-14%2034-14c14%200%2017%2014%2031%2014h47%22%20stroke%3D%22%23E8B968%22%20stroke-width%3D%222.6%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%20opacity%3D%22.95%22/%3E%3Cpath%20d%3D%22M108%2040c8-8%209-18%202-24%2014%202%2022%2016%2010%2028-9%209-12%2016-3%2024-16-3-23-16-9-28Z%22%20fill%3D%22%23E8B968%22%20opacity%3D%22.85%22/%3E%3Ccircle%20cx%3D%22120%22%20cy%3D%2240%22%20r%3D%223.4%22%20fill%3D%22%23FFE2A6%22/%3E%3C/svg%3E");}
-.registration-layout .form-shell::after{content:"";position:absolute;left:1rem;bottom:1rem;width:76px;height:76px;pointer-events:none;opacity:.18;background:center/contain no-repeat url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%20120%20120%22%20fill%3D%22none%22%3E%3Cpath%20d%3D%22M60%2013c7%2015%2015%2023%2030%2030-15%207-23%2015-30%2030-7-15-15-23-30-30%2015-7%2023-15%2030-30Z%22%20stroke%3D%22%23E8B968%22%20stroke-width%3D%222.5%22%20opacity%3D%22.9%22/%3E%3Cpath%20d%3D%22M60%2077c7%2015%2015%2023%2030%2030-15%207-23%2015-30%2030-7-15-15-23-30-30%2015-7%2023-15%2030-30Z%22%20stroke%3D%22%23E8B968%22%20stroke-width%3D%222.5%22%20opacity%3D%22.55%22%20transform%3D%22translate%280%2C-34%29%22/%3E%3Ccircle%20cx%3D%2260%22%20cy%3D%2260%22%20r%3D%227%22%20fill%3D%22%23FFE2A6%22%20opacity%3D%22.95%22/%3E%3C/svg%3E");}
-.registration-info {position:sticky;top:clamp(1.4rem,5vh,4rem);align-self:start;padding:clamp(1rem,2.6vw,2rem) 0;}
+.registration-layout {max-width:1270px;margin:0 auto;display:grid;grid-template-columns:minmax(280px,.82fr) minmax(480px,1.18fr);gap:clamp(2rem,5vw,6.6rem);align-items:start;}
 .registration-info .eyebrow {margin-bottom:1.35rem;}
 .registration-info h2 {font:600 clamp(2.7rem,4vw,4.4rem)/.98 'Cormorant Garamond',Georgia,serif;color:#fff4e2;margin:0 0 1.25rem;text-wrap:balance;}
 .registration-intro {color:#d7cbbf;font-size:.96rem;max-width:31rem;margin:0 0 2.6rem;}
@@ -45,8 +37,6 @@ linear-gradient(90deg,rgba(8,14,29,.56) 0%,rgba(8,14,29,.08) 17%,rgba(8,14,29,0)
 .detail-list .venue-link {text-decoration-thickness:1px;}
 .registration-note {font-size:.79rem;line-height:1.6;color:#bfb4a6;margin:1.55rem 0 0;}
 .registration-layout .form-shell {max-width:none;width:100%;margin:0;}
-.rsvp-section {padding:clamp(2.7rem,5vw,5.2rem) clamp(1.15rem,4.3vw,4rem) 3.5rem;scroll-margin-top:0;}
-.form-shell h1 {font-size:clamp(2.6rem,4vw,3.5rem)}
 /* Keep form compact enough to keep event summary in view on a desktop. */
 .registration-layout .form-shell {padding:clamp(1.35rem,2.5vw,2.3rem);}
 .registration-layout .form-intro {margin-bottom:1.3rem;}
@@ -77,9 +67,79 @@ linear-gradient(90deg,rgba(8,14,29,.56) 0%,rgba(8,14,29,.08) 17%,rgba(8,14,29,0)
 .confirm-status {margin:1.15rem 0 0;font-size:.83rem;color:#ddceba;line-height:1.55;}
 .confirm-status:empty {display:none;}
 body.dialog-open {overflow:hidden;}
-@media(max-width:900px){.registration-layout {grid-template-columns:1fr;max-width:700px;gap:2rem;}.registration-layout::before{height:160px;bottom:0}.registration-info {position:static;padding:.5rem 0 0;}.registration-info::before{width:118px;height:38px;top:-.25rem;right:0;opacity:.42}.registration-info::after{width:70px;height:70px;left:auto;right:.2rem;bottom:-.35rem;opacity:.24}.registration-layout .form-shell::before{width:96px;height:32px;opacity:.2}.registration-layout .form-shell::after{display:none}.registration-info h2 {font-size:3.5rem}.detail-list {grid-template-columns:repeat(3,minmax(0,1fr));gap:1rem;}.detail-list>div {padding:.85rem .4rem;border-top:1px solid rgba(232,185,104,.22)}.detail-list dd {font-size:1.45rem}.registration-intro {margin-bottom:1.4rem}.registration-note {margin-top:1rem}}
-@media(max-width:620px){.registration-layout{gap:1.4rem}.registration-layout::before{display:none}.registration-info::before{width:98px;height:30px;top:-.1rem;right:0;opacity:.38}.registration-info::after{width:58px;height:58px;right:.1rem;bottom:-.2rem;opacity:.18}.registration-info h2 {font-size:3rem}.detail-list {grid-template-columns:1fr;gap:.4rem}.detail-list>div {padding:.5rem 0;border-top:0;border-bottom:1px solid rgba(232,185,104,.2)}.detail-list dd {font-size:1.5rem}.confirm-details div {display:block;text-align:center}.confirm-details strong {display:block;text-align:center}.confirm-card {max-height:92dvh;}.registration-layout .form-shell {padding:1.45rem;}}
+@media(max-width:900px){.registration-layout {grid-template-columns:1fr;max-width:700px;gap:2rem;}.registration-info h2 {font-size:3.5rem}.detail-list {grid-template-columns:repeat(3,minmax(0,1fr));gap:1rem;}.detail-list>div {padding:.85rem .4rem;border-top:1px solid rgba(232,185,104,.22)}.detail-list dd {font-size:1.45rem}.registration-intro {margin-bottom:1.4rem}.registration-note {margin-top:1rem}}
+@media(max-width:620px){.registration-layout{gap:1.4rem}.registration-info h2 {font-size:3rem}.detail-list {grid-template-columns:1fr;gap:.4rem}.detail-list>div {padding:.5rem 0;border-top:0;border-bottom:1px solid rgba(232,185,104,.2)}.detail-list dd {font-size:1.5rem}.confirm-details div {display:block;text-align:center}.confirm-details strong {display:block;text-align:center}.confirm-card {max-height:92dvh;}.registration-layout .form-shell {padding:1.45rem;}}
 @media(prefers-reduced-motion:reduce){.confirm-dialog,.confirm-card{transition:none!important}}
+
+
+
+
+/* Arabian-inspired treatment for the registration section: richer, more visible, still elegant. */
+.registration-layout{position:relative}
+.registration-layout::before{content:"";position:absolute;left:-1.2rem;right:-1.2rem;bottom:1rem;height:300px;pointer-events:none;background:
+  radial-gradient(ellipse at 22% 56%,rgba(232,185,104,.07),transparent 42%),
+  radial-gradient(ellipse at 80% 26%,rgba(232,185,104,.06),transparent 36%),
+  radial-gradient(ellipse at 50% 100%,rgba(255,226,166,.035),transparent 52%);
+  opacity:1}
+.registration-info{position:sticky;top:clamp(1.4rem,5vh,4rem);align-self:start;padding:clamp(1.6rem,2.6vw,2.25rem) clamp(1.35rem,2.2vw,1.95rem) clamp(1.8rem,2.8vw,2.45rem);border:1px solid rgba(232,185,104,.24);border-radius:1.5rem;background:
+  linear-gradient(180deg,rgba(255,255,255,.026),rgba(255,255,255,0)),
+  url('/assets/ornament-lattice.svg') right -26px bottom -26px/220px auto no-repeat,
+  radial-gradient(circle at 74% 78%,rgba(232,185,104,.06),transparent 33%),
+  linear-gradient(145deg,rgba(15,27,52,.72),rgba(9,16,33,.42));
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.045), inset 0 0 0 1px rgba(255,226,166,.05), 0 28px 64px rgba(0,0,0,.18);
+  overflow:hidden}
+.registration-info::before{content:"";position:absolute;left:50%;top:1rem;transform:translateX(-50%);width:min(84%,390px);height:40px;background:center/contain no-repeat url('/assets/ornament-divider.svg');opacity:.82;pointer-events:none;filter:drop-shadow(0 0 8px rgba(232,185,104,.08))}
+.registration-info::after{content:"";position:absolute;right:-.55rem;bottom:-.55rem;width:188px;height:188px;background:center/contain no-repeat url('/assets/ornament-corner.svg');opacity:.28;pointer-events:none;filter:drop-shadow(0 0 24px rgba(232,185,104,.06))}
+.registration-info .eyebrow{padding-top:1.6rem;margin-bottom:1rem;text-align:center}
+.registration-info h2{text-wrap:balance}
+.registration-intro{position:relative;z-index:1;color:#ddd0c0;max-width:28rem;margin:0 0 2.15rem}
+.detail-list{position:relative;z-index:1}
+.registration-note{position:relative;z-index:1;margin-top:1.4rem}
+.registration-layout .form-shell{position:relative;max-width:none;width:100%;margin:0;padding:clamp(1.55rem,2.7vw,2.45rem);border-radius:1.5rem;border:1px solid rgba(232,185,104,.22);background:
+  linear-gradient(180deg,rgba(255,255,255,.024),rgba(255,255,255,0)),
+  url('/assets/ornament-lattice.svg') left -36px top -38px/210px auto no-repeat,
+  radial-gradient(circle at 18% 18%,rgba(232,185,104,.055),transparent 30%),
+  linear-gradient(155deg,rgba(21,34,61,.76),rgba(11,19,37,.5));
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.04), inset 0 0 0 1px rgba(255,226,166,.04), 0 28px 60px rgba(0,0,0,.17);overflow:hidden}
+.registration-layout .form-shell::before{content:"";position:absolute;left:50%;top:.95rem;transform:translateX(-50%);width:min(78%,330px);height:34px;background:center/contain no-repeat url('/assets/ornament-divider.svg');opacity:.52;pointer-events:none}
+.registration-layout .form-shell::after{content:"";position:absolute;left:-.4rem;top:auto;bottom:-.55rem;width:170px;height:170px;background:center/contain no-repeat url('/assets/ornament-corner.svg');opacity:.18;pointer-events:none;transform:scaleX(-1)}
+.form-shell h1{position:relative;padding-top:1.35rem}
+@media(max-width:900px){
+  .registration-layout::before{height:220px;bottom:0}
+  .registration-info{position:static;padding:1.4rem 1.2rem 1.65rem;background:
+    linear-gradient(180deg,rgba(255,255,255,.026),rgba(255,255,255,0)),
+    url('/assets/ornament-lattice.svg') right -18px bottom -18px/180px auto no-repeat,
+    radial-gradient(circle at 74% 78%,rgba(232,185,104,.06),transparent 33%),
+    linear-gradient(145deg,rgba(15,27,52,.72),rgba(9,16,33,.42));}
+  .registration-info::before{top:.78rem;width:min(78%,330px);height:34px;opacity:.72}
+  .registration-info::after{width:150px;height:150px;right:-.45rem;bottom:-.35rem;opacity:.2}
+  .registration-info .eyebrow{padding-top:1.28rem}
+  .registration-layout .form-shell{padding:1.45rem 1.2rem 1.6rem;background:
+    linear-gradient(180deg,rgba(255,255,255,.024),rgba(255,255,255,0)),
+    url('/assets/ornament-lattice.svg') left -26px top -22px/165px auto no-repeat,
+    radial-gradient(circle at 18% 18%,rgba(232,185,104,.055),transparent 30%),
+    linear-gradient(155deg,rgba(21,34,61,.76),rgba(11,19,37,.5));}
+  .registration-layout .form-shell::before{top:.82rem;width:min(72%,280px);height:30px;opacity:.38}
+  .registration-layout .form-shell::after{width:136px;height:136px;opacity:.14;left:auto;right:-.45rem;top:auto;bottom:-.45rem;transform:none}
+  .form-shell h1{padding-top:1.08rem}
+}
+@media(max-width:620px){
+  .registration-layout::before{display:none}
+  .registration-info{padding:1.25rem 1rem 1.45rem;border-radius:1.15rem;background:
+    linear-gradient(180deg,rgba(255,255,255,.024),rgba(255,255,255,0)),
+    url('/assets/ornament-lattice.svg') right -16px bottom -16px/132px auto no-repeat,
+    linear-gradient(145deg,rgba(15,27,52,.72),rgba(9,16,33,.42));}
+  .registration-info::before{top:.7rem;width:220px;height:28px;opacity:.68}
+  .registration-info::after{width:112px;height:112px;right:-.35rem;bottom:-.25rem;opacity:.17}
+  .registration-info .eyebrow{padding-top:1.04rem}
+  .registration-layout .form-shell{padding:1.25rem 1rem 1.45rem;border-radius:1.15rem;background:
+    linear-gradient(180deg,rgba(255,255,255,.022),rgba(255,255,255,0)),
+    url('/assets/ornament-lattice.svg') left -18px top -18px/124px auto no-repeat,
+    linear-gradient(155deg,rgba(21,34,61,.76),rgba(11,19,37,.5));}
+  .registration-layout .form-shell::before{top:.72rem;width:210px;height:26px;opacity:.34}
+  .registration-layout .form-shell::after{width:100px;height:100px;right:-.25rem;bottom:-.25rem;opacity:.1;transform:none}
+  .form-shell h1{padding-top:.95rem}
+}
 
 /* The guest invitation is composed in the employee's mail app, never sent by this site. */
 .plus-one-reminder {margin-top:1.4rem;padding:1.35rem 1rem 0;border-top:1px solid rgba(232,185,104,.24)}
