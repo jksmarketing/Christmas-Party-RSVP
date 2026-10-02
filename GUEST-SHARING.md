@@ -7,3 +7,7 @@ The invitation card and calendar file can also be downloaded individually from t
 No guest email is collected; no Resend integration or guest-delivery secrets are needed. The Cloudflare registration endpoint still requires the existing monday.com variables.
 
 The calendar block currently runs 17:30–21:00 Europe/Zurich; confirm the exact end time before distributing.
+
+## Mobile artwork
+
+At phone sizes (640px and below), the `picture` element selects the user-supplied portrait artwork from `public/assets/jks-christmas-hero-mobile.png`. The image keeps its natural proportions; the original landscape image is used above that breakpoint.

@@ -18,7 +18,7 @@
 <body>
   <main>
     <section class="hero" aria-label="A Real JKS Christmas Einladung">
-      <img class="hero-art" src="/assets/jks-christmas-hero.jpg" alt="A Real JKS Christmas – goldene Krone mit drei Königen vor einem sternenklaren Wüstenhimmel" fetchpriority="high">
+      <picture class="hero-picture"><source media="(max-width: 640px)" srcset="/assets/jks-christmas-hero-mobile.png"><img class="hero-art" src="/assets/jks-christmas-hero.jpg" alt="A Real JKS Christmas – goldene Krone mit drei Königen vor einem sternenklaren Wüstenhimmel" fetchpriority="high"></picture>
       <div class="hero-vignette" aria-hidden="true"></div>
       <div class="hero-bottom">
         <div class="hero-ornament" aria-hidden="true"><span>✦</span></div>
@@ -95,25 +95,24 @@
       <span class="confirm-star" aria-hidden="true">✦</span>
       <h2 id="confirm-title">Du bist dabei!</h2>
       <p class="confirm-lead">Wie schön, dass du mit uns feierst. Wir freuen uns auf einen besonderen gemeinsamen Abend.</p>
-      <div class="confirm-details">
-        <div><span>FREITAG</span><strong>4. Dezember 2026</strong></div>
-        <div><span>ANKUNFT</span><strong>Ab 17:30 Uhr</strong></div>
-        <div><span>ORT</span><strong>Juckerhof, Seegräben</strong></div>
-      </div>
-      <div class="confirm-actions">
-        <a class="button button-primary" href="/assets/jks-christmas-2026.ics" download="JKS-Weihnachtsfeier-2026.ics">Zum Kalender hinzufügen ↓</a>
-        <a class="button button-secondary" href="https://www.google.com/maps/search/?api=1&amp;query=Juckerhof%2C%20Dorfstrasse%2023%2C%208607%20Seegr%C3%A4ben" target="_blank" rel="noopener noreferrer">Anfahrt anzeigen ↗</a>
-      </div>
-      <div class="plus-one-reminder" id="plus-one-reminder" hidden>
-        <span class="reminder-icon" aria-hidden="true">✉</span>
-        <h3>Denk daran, deine Begleitperson einzuladen!</h3>
-        <p>Öffne dein E-Mail-Programm und schicke ihr die Einladung. Die Nachricht enthält keinen Anmeldelink.</p>
-        <a class="button button-primary" id="guest-email-link" href="#">Einladung per E-Mail teilen ↗</a>
-        <div class="guest-downloads">
-          <a href="/assets/jks-christmas-hero.jpg" download="JKS-Weihnachtseinladung-2026.jpg">Einladungskarte herunterladen ↓</a>
-          <a href="/assets/jks-christmas-2026.ics" download="JKS-Weihnachtsfeier-2026.ics">Kalenderdatei herunterladen ↓</a>
+      <div class="confirm-grid" id="confirm-grid">
+        <div class="confirm-main">
+          <div class="confirm-details">
+            <div><span>FREITAG</span><strong>4. Dezember 2026</strong></div>
+            <div><span>ANKUNFT</span><strong>Ab 17:30 Uhr</strong></div>
+            <div><span>ORT</span><strong>Juckerhof, Seegräben</strong></div>
+          </div>
+          <div class="confirm-actions">
+            <a class="button button-primary" href="/assets/jks-christmas-2026.ics" download="JKS-Weihnachtsfeier-2026.ics">Zum Kalender hinzufügen ↓</a>
+            <a class="button button-secondary" href="https://www.google.com/maps/search/?api=1&amp;query=Juckerhof%2C%20Dorfstrasse%2023%2C%208607%20Seegr%C3%A4ben" target="_blank" rel="noopener noreferrer">Anfahrt anzeigen ↗</a>
+          </div>
         </div>
-        <p class="attachment-hint">Tipp: Du kannst die Einladungskarte und die Kalenderdatei bei Bedarf selbst als Anhänge hinzufügen. E-Mail-Programme übernehmen Anhänge nicht automatisch aus Webseiten.</p>
+        <div class="plus-one-reminder" id="plus-one-reminder" hidden>
+          <span class="reminder-icon" aria-hidden="true">✉</span>
+          <h3>Denk daran, deine Begleitperson einzuladen!</h3>
+          <p>Öffne dein E-Mail-Programm mit der vorbereiteten Einladung.</p>
+          <a class="button button-primary" id="guest-email-link" href="#">Einladung per E-Mail teilen ↗</a>
+        </div>
       </div>
     </div>
   </div>

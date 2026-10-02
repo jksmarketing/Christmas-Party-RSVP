@@ -84,3 +84,55 @@ body.dialog-open {overflow:hidden;}
 .guest-downloads {display:flex;flex-wrap:wrap;justify-content:center;gap:.5rem 1.2rem;margin:1.05rem 0 0}
 .guest-downloads a {font-size:.78rem;color:#e9c68b;text-underline-offset:3px}
 .plus-one-reminder .attachment-hint {font-size:.73rem;color:#b9ad9e;max-width:29rem;margin:1rem auto 0}
+
+/* Dedicated portrait artwork for phones; use original proportions to preserve the entire crown and lettering. */
+.hero-picture{position:absolute;inset:0;display:block;z-index:0;overflow:hidden}
+.hero-picture .hero-art{inset:0}
+@media(max-width:640px){
+  .hero{display:block;min-height:0;height:auto;overflow:hidden}
+  .hero-picture{position:relative;inset:auto;width:100%;height:auto;overflow:visible}
+  .hero-picture .hero-art{position:relative;inset:auto;width:100%;height:auto;object-fit:contain;object-position:center;animation:cinematic-unveil 2.4s cubic-bezier(.2,.65,.18,1) both}
+  .hero::before{z-index:1;background:linear-gradient(to bottom,rgba(7,14,28,.04) 0%,transparent 42%,rgba(7,14,28,.06) 67%,rgba(7,14,28,.72) 100%)}
+  .hero-vignette{z-index:1;inset:auto 0 0;height:38%;background:linear-gradient(to bottom,transparent,rgba(7,14,28,.48))}
+  .hero-bottom{position:absolute;left:0;right:0;bottom:0;padding:0 1.15rem 2.1rem}
+  .hero-kicker{font-size:.58rem}
+  .hero-lead{max-width:90%;font-size:clamp(1.38rem,6vw,2.05rem);margin-bottom:1.1rem}
+}
+
+/* Wide, calm confirmation: both actions visible at once on desktop. */
+@media (min-width:761px) {
+  .confirm-dialog {padding:1.1rem}
+  .confirm-card {width:min(1050px,calc(100vw - 3rem));max-width:none;max-height:calc(100dvh - 2.2rem);overflow-y:auto;padding:clamp(1.45rem,3vw,2.55rem) clamp(1.6rem,3.5vw,3.1rem)}
+  .confirm-star {margin:0 0 .22rem;font-size:1.55rem}
+  .confirm-card h2 {font-size:clamp(3rem,4vw,4rem);margin:0 0 .25rem}
+  .confirm-card .confirm-lead {font-size:.88rem;max-width:38rem;margin:0 auto 1.65rem}
+  .confirm-grid {display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);align-items:stretch;gap:clamp(1.5rem,3.2vw,3rem);text-align:left}
+  .confirm-grid:not(:has(.plus-one-reminder:not([hidden]))) {grid-template-columns:minmax(0,690px);justify-content:center}
+  .confirm-details {margin:0 0 1.15rem;padding:1rem 0;gap:.76rem}
+  .confirm-details strong {font-size:1.36rem}
+  .confirm-actions {gap:.55rem}
+  .confirm-actions .button,.plus-one-reminder .button {min-height:3rem;padding:.72rem 1.1rem;font-size:.83rem}
+  .plus-one-reminder {margin:0;padding:1.2rem 0 1rem clamp(1.45rem,3.2vw,3rem);border-top:1px solid rgba(232,185,104,.24);border-bottom:1px solid rgba(232,185,104,.24);border-left:1px solid rgba(232,185,104,.24);display:flex;flex-direction:column;justify-content:center;text-align:center}
+  .plus-one-reminder[hidden] {display:none!important}
+  .plus-one-reminder .reminder-icon {font-size:1.4rem;margin:0 0 .55rem}
+  .plus-one-reminder h3 {font-size:clamp(1.75rem,2.6vw,2.35rem);margin:0 0 .8rem}
+  .plus-one-reminder>p {margin:.1rem auto 1.25rem;font-size:.87rem}
+  .plus-one-reminder .button {width:100%;margin-top:.25rem}
+}
+/* On phones and low-height windows, accessibility takes precedence: content may scroll. */
+@media (max-width:760px) {
+  .confirm-card {width:100%;max-width:570px;max-height:calc(100dvh - 1rem);padding:1.65rem 1.2rem;overflow-y:auto}
+  .confirm-dialog {padding:.5rem}
+  .confirm-card h2 {font-size:clamp(2.6rem,12vw,3.6rem)}
+  .confirm-card .confirm-lead {margin-bottom:.9rem}
+  .confirm-grid {display:block}
+  .confirm-details {margin:1rem auto;padding:1rem 0;gap:.65rem}
+  .plus-one-reminder {margin-top:1.2rem;padding:1.15rem .2rem 0}
+}
+@media (max-height:650px) and (min-width:761px) {
+  .confirm-card {padding-top:1rem;padding-bottom:1rem}
+  .confirm-card h2 {font-size:2.65rem}
+  .confirm-card .confirm-lead {margin-bottom:.75rem}
+  .confirm-details {padding:.6rem 0;gap:.4rem;margin-bottom:.65rem}
+  .confirm-actions .button,.plus-one-reminder .button {min-height:2.65rem;padding:.55rem 1rem}
+}
