@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 240" fill="none" xmlns:xlink="http://www.w3.org/1999/xlink">
+ <g stroke="#e3b974" stroke-width="1.1" stroke-linecap="round" stroke-linejoin="round">
+  <!-- Two continuous curved vine stems emerge from the corner; never form a solid panel -->
+  <path d="M4 202V51Q4 4 51 4h151" opacity=".77"/>
+  <path d="M17 184V66q0-48 48-48h117" opacity=".43"/>
+  <path d="M6 112q47 4 64-32Q87 44 119 44q26 0 39 18" opacity=".58"/>
+  <path d="M44 5q0 40 32 58t0 51q-17 20-35 5" opacity=".70"/>
+  <path d="M14 171q30-7 48-34t49-23q22 3 22 27q-1 20-21 22" opacity=".55"/>
+  <path d="M76 62q-4 19-20 30m52-46q-4 25-22 35m30 34q-26 5-33 26m-38-18q-18 7-27 29" opacity=".51"/>
+  <path d="M135 30q10 12 24 12t19-12q-16-12-43 0Z" opacity=".53"/>
+  <path d="M88 83q-2-20 15-32 16 22-15 32Z" opacity=".63"/>
+  <path d="M60 115q-22 1-33-13 19-17 33 13Z" opacity=".57"/>
+  <path d="M113 129q-18-18-38-11 7 24 38 11Z" opacity=".6"/>
+  <path d="M38 152q-18 7-22 27 24-1 22-27Z" opacity=".6"/>
+  <!-- Eight-pointed star and delicate dots echo the Christmas artwork -->
+  <path d="M78 78l6 12 13-1-10 10 6 12-15-6-12 7 2-14-11-9 14 1 7-12Z" opacity=".60"/>
+  <circle cx="130" cy="68" r="2" fill="#efc984" stroke="none" opacity=".63"/>
+  <circle cx="112" cy="165" r="2" fill="#efc984" stroke="none" opacity=".47"/>
+  <circle cx="171" cy="17" r="1.8" fill="#efc984" stroke="none" opacity=".43"/>
+ </g>
+</svg>

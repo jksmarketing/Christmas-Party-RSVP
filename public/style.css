@@ -83,7 +83,6 @@ body.dialog-open {overflow:hidden;}
   opacity:1}
 .registration-info{position:sticky;top:clamp(1.4rem,5vh,4rem);align-self:start;padding:clamp(1.6rem,2.6vw,2.25rem) clamp(1.35rem,2.2vw,1.95rem) clamp(1.8rem,2.8vw,2.45rem);border:1px solid rgba(232,185,104,.24);border-radius:1.5rem;background:
   linear-gradient(180deg,rgba(255,255,255,.026),rgba(255,255,255,0)),
-  url('/assets/ornament-lattice.svg') right -26px bottom -26px/220px auto no-repeat,
   radial-gradient(circle at 74% 78%,rgba(232,185,104,.06),transparent 33%),
   linear-gradient(145deg,rgba(15,27,52,.72),rgba(9,16,33,.42));
   box-shadow:inset 0 1px 0 rgba(255,255,255,.045), inset 0 0 0 1px rgba(255,226,166,.05), 0 28px 64px rgba(0,0,0,.18);
@@ -97,7 +96,6 @@ body.dialog-open {overflow:hidden;}
 .registration-note{position:relative;z-index:1;margin-top:1.4rem}
 .registration-layout .form-shell{position:relative;max-width:none;width:100%;margin:0;padding:clamp(1.55rem,2.7vw,2.45rem);border-radius:1.5rem;border:1px solid rgba(232,185,104,.22);background:
   linear-gradient(180deg,rgba(255,255,255,.024),rgba(255,255,255,0)),
-  url('/assets/ornament-lattice.svg') left -36px top -38px/210px auto no-repeat,
   radial-gradient(circle at 18% 18%,rgba(232,185,104,.055),transparent 30%),
   linear-gradient(155deg,rgba(21,34,61,.76),rgba(11,19,37,.5));
   box-shadow:inset 0 1px 0 rgba(255,255,255,.04), inset 0 0 0 1px rgba(255,226,166,.04), 0 28px 60px rgba(0,0,0,.17);overflow:hidden}
@@ -108,7 +106,6 @@ body.dialog-open {overflow:hidden;}
   .registration-layout::before{height:220px;bottom:0}
   .registration-info{position:static;padding:1.4rem 1.2rem 1.65rem;background:
     linear-gradient(180deg,rgba(255,255,255,.026),rgba(255,255,255,0)),
-    url('/assets/ornament-lattice.svg') right -18px bottom -18px/180px auto no-repeat,
     radial-gradient(circle at 74% 78%,rgba(232,185,104,.06),transparent 33%),
     linear-gradient(145deg,rgba(15,27,52,.72),rgba(9,16,33,.42));}
   .registration-info::before{top:.78rem;width:min(78%,330px);height:34px;opacity:.72}
@@ -116,7 +113,6 @@ body.dialog-open {overflow:hidden;}
   .registration-info .eyebrow{padding-top:1.28rem}
   .registration-layout .form-shell{padding:1.45rem 1.2rem 1.6rem;background:
     linear-gradient(180deg,rgba(255,255,255,.024),rgba(255,255,255,0)),
-    url('/assets/ornament-lattice.svg') left -26px top -22px/165px auto no-repeat,
     radial-gradient(circle at 18% 18%,rgba(232,185,104,.055),transparent 30%),
     linear-gradient(155deg,rgba(21,34,61,.76),rgba(11,19,37,.5));}
   .registration-layout .form-shell::before{top:.82rem;width:min(72%,280px);height:30px;opacity:.38}
@@ -127,14 +123,12 @@ body.dialog-open {overflow:hidden;}
   .registration-layout::before{display:none}
   .registration-info{padding:1.25rem 1rem 1.45rem;border-radius:1.15rem;background:
     linear-gradient(180deg,rgba(255,255,255,.024),rgba(255,255,255,0)),
-    url('/assets/ornament-lattice.svg') right -16px bottom -16px/132px auto no-repeat,
     linear-gradient(145deg,rgba(15,27,52,.72),rgba(9,16,33,.42));}
   .registration-info::before{top:.7rem;width:220px;height:28px;opacity:.68}
   .registration-info::after{width:112px;height:112px;right:-.35rem;bottom:-.25rem;opacity:.17}
   .registration-info .eyebrow{padding-top:1.04rem}
   .registration-layout .form-shell{padding:1.25rem 1rem 1.45rem;border-radius:1.15rem;background:
     linear-gradient(180deg,rgba(255,255,255,.022),rgba(255,255,255,0)),
-    url('/assets/ornament-lattice.svg') left -18px top -18px/124px auto no-repeat,
     linear-gradient(155deg,rgba(21,34,61,.76),rgba(11,19,37,.5));}
   .registration-layout .form-shell::before{top:.72rem;width:210px;height:26px;opacity:.34}
   .registration-layout .form-shell::after{width:100px;height:100px;right:-.25rem;bottom:-.25rem;opacity:.1;transform:none}
@@ -202,4 +196,51 @@ body.dialog-open {overflow:hidden;}
   .confirm-card .confirm-lead {margin-bottom:.75rem}
   .confirm-details {padding:.6rem 0;gap:.4rem;margin-bottom:.65rem}
   .confirm-actions .button,.plus-one-reminder .button {min-height:2.65rem;padding:.55rem 1rem}
+}
+
+
+/* Arabesque refinement: remove motifs interfering with the RSVP content. */
+.registration-info::after,
+.registration-layout .form-shell::after { display:none!important; }
+
+/* Confirmation only: gilded arabesque corners stay clear of all typography and actions. */
+.confirm-card {
+  isolation:isolate;
+  background-color:#101b33;
+  background-image:
+    url('/assets/ornament-arch-corner.svg'),
+    url('/assets/ornament-arch-corner.svg'),
+    url('/assets/ornament-arch-corner.svg'),
+    url('/assets/ornament-arch-corner.svg'),
+    radial-gradient(ellipse at 50% 0,rgba(169,97,43,.20),transparent 53%),
+    linear-gradient(150deg,#172440,#090f20);
+  background-repeat:no-repeat;
+  background-size:165px 165px,165px 165px,110px 110px,110px 110px,100% 100%,100% 100%;
+  background-position:left 14px top 14px,right 14px top 14px,left 14px bottom 14px,right 14px bottom 14px,center,center;
+}
+.confirm-card::before {
+  content:"";
+  position:absolute;
+  inset:0;
+  border-radius:inherit;
+  border:1px solid rgba(249,207,135,.13);
+  pointer-events:none;
+}
+.confirm-card::after {
+  content:"";
+  display:block;
+  width:250px;
+  max-width:55%;
+  height:23px;
+  margin:1.05rem auto -1.35rem;
+  background:url('/assets/ornament-modal-divider.svg') center/contain no-repeat;
+  opacity:.68;
+  pointer-events:none;
+}
+@media(max-width:760px) {
+  .confirm-card {
+    background-size:92px 92px,92px 92px,64px 64px,64px 64px,100% 100%,100% 100%;
+    background-position:left 5px top 7px,right 5px top 7px,left 4px bottom 5px,right 4px bottom 5px,center,center;
+  }
+  .confirm-card::after {width:170px;height:19px;margin:.7rem auto -.45rem;}
 }
