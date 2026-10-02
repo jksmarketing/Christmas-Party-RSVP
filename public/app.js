@@ -30,7 +30,7 @@ function showConfirmation(bringingGuest) {
       "Ankunft ab 17:30 Uhr",
       "Juckerhof, Seegräben",
       "",
-      "Einladungskarte: " + origin + "/assets/jks-christmas-hero.jpg",
+      "Einladungskarte: " + origin + "/assets/jks-christmas-invitation-card.png",
       "Kalendereintrag: " + origin + "/assets/jks-christmas-2026.ics",
       "",
       "Ich freue mich auf einen schönen gemeinsamen Abend!"
