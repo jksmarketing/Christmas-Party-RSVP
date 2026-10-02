@@ -27,6 +27,7 @@ linear-gradient(90deg,rgba(8,14,29,.56) 0%,rgba(8,14,29,.08) 17%,rgba(8,14,29,0)
 .hero-bottom::before {inset:auto 0 -2.5rem;height:16rem;width:auto;left:0;transform:none;background:radial-gradient(ellipse at 50% 60%,rgba(229,169,89,.12),transparent 72%);}
 /* Desktop: event brief and form in one synchronized viewport. */
 .registration-layout {max-width:1270px;margin:0 auto;display:grid;grid-template-columns:minmax(280px,.82fr) minmax(480px,1.18fr);gap:clamp(2rem,5vw,6.6rem);align-items:start;}
+.registration-info {position:sticky;top:clamp(1.4rem,5vh,4rem);align-self:start;padding:clamp(1rem,2.6vw,2rem) 0;}
 .registration-info .eyebrow {margin-bottom:1.35rem;}
 .registration-info h2 {font:600 clamp(2.7rem,4vw,4.4rem)/.98 'Cormorant Garamond',Georgia,serif;color:#fff4e2;margin:0 0 1.25rem;text-wrap:balance;}
 .registration-intro {color:#d7cbbf;font-size:.96rem;max-width:31rem;margin:0 0 2.6rem;}
@@ -37,6 +38,8 @@ linear-gradient(90deg,rgba(8,14,29,.56) 0%,rgba(8,14,29,.08) 17%,rgba(8,14,29,0)
 .detail-list .venue-link {text-decoration-thickness:1px;}
 .registration-note {font-size:.79rem;line-height:1.6;color:#bfb4a6;margin:1.55rem 0 0;}
 .registration-layout .form-shell {max-width:none;width:100%;margin:0;}
+.rsvp-section {padding:clamp(2.7rem,5vw,5.2rem) clamp(1.15rem,4.3vw,4rem) 3.5rem;scroll-margin-top:0;}
+.form-shell h1 {font-size:clamp(2.6rem,4vw,3.5rem)}
 /* Keep form compact enough to keep event summary in view on a desktop. */
 .registration-layout .form-shell {padding:clamp(1.35rem,2.5vw,2.3rem);}
 .registration-layout .form-intro {margin-bottom:1.3rem;}
@@ -55,6 +58,8 @@ linear-gradient(90deg,rgba(8,14,29,.56) 0%,rgba(8,14,29,.08) 17%,rgba(8,14,29,0)
 .confirm-close {position:absolute;right:.8rem;top:.8rem;color:#e6cfac;background:transparent;border:0;font-size:1.5rem;cursor:pointer;width:2.5rem;height:2.5rem;border-radius:50%;}
 .confirm-close:hover,.confirm-close:focus-visible {background:rgba(255,255,255,.1)}
 .confirm-star {display:block;color:var(--gold);font-size:1.8rem;text-shadow:0 0 20px rgba(232,185,104,.6);margin:0 0 .65rem;}
+.confirm-ornament{margin:1.05rem auto 0;opacity:.92}.confirm-ornament::before,.confirm-ornament::after{width:96px;background:linear-gradient(90deg,transparent,rgba(232,185,104,.42),rgba(232,185,104,.82))}@media(max-width:900px){.confirm-ornament{margin:.9rem auto 0}.confirm-ornament::before,.confirm-ornament::after{width:76px}}@media(max-width:620px){.confirm-ornament{margin:.75rem auto 0}.confirm-ornament::before,.confirm-ornament::after{width:58px}}
+
 .confirm-card h2 {font:600 clamp(2.6rem,6vw,4.3rem)/1 'Cormorant Garamond',Georgia,serif;margin:0 0 .7rem;color:#fff5e2;}
 .confirm-card .confirm-lead {font-size:.91rem;color:#e2d1be;max-width:30rem;margin:0 auto 1.4rem;}
 .confirm-details {display:grid;gap:.9rem;margin:1.4rem auto 1.6rem;padding:1.35rem 0;border-top:1px solid rgba(232,185,104,.22);border-bottom:1px solid rgba(232,185,104,.22);}
@@ -67,73 +72,9 @@ linear-gradient(90deg,rgba(8,14,29,.56) 0%,rgba(8,14,29,.08) 17%,rgba(8,14,29,0)
 .confirm-status {margin:1.15rem 0 0;font-size:.83rem;color:#ddceba;line-height:1.55;}
 .confirm-status:empty {display:none;}
 body.dialog-open {overflow:hidden;}
-@media(max-width:900px){.registration-layout {grid-template-columns:1fr;max-width:700px;gap:2rem;}.registration-info h2 {font-size:3.5rem}.detail-list {grid-template-columns:repeat(3,minmax(0,1fr));gap:1rem;}.detail-list>div {padding:.85rem .4rem;border-top:1px solid rgba(232,185,104,.22)}.detail-list dd {font-size:1.45rem}.registration-intro {margin-bottom:1.4rem}.registration-note {margin-top:1rem}}
+@media(max-width:900px){.registration-layout {grid-template-columns:1fr;max-width:700px;gap:2rem;}.registration-info {position:static;padding:.5rem 0 0;}.registration-info h2 {font-size:3.5rem}.detail-list {grid-template-columns:repeat(3,minmax(0,1fr));gap:1rem;}.detail-list>div {padding:.85rem .4rem;border-top:1px solid rgba(232,185,104,.22)}.detail-list dd {font-size:1.45rem}.registration-intro {margin-bottom:1.4rem}.registration-note {margin-top:1rem}}
 @media(max-width:620px){.registration-layout{gap:1.4rem}.registration-info h2 {font-size:3rem}.detail-list {grid-template-columns:1fr;gap:.4rem}.detail-list>div {padding:.5rem 0;border-top:0;border-bottom:1px solid rgba(232,185,104,.2)}.detail-list dd {font-size:1.5rem}.confirm-details div {display:block;text-align:center}.confirm-details strong {display:block;text-align:center}.confirm-card {max-height:92dvh;}.registration-layout .form-shell {padding:1.45rem;}}
 @media(prefers-reduced-motion:reduce){.confirm-dialog,.confirm-card{transition:none!important}}
-
-
-
-
-/* Arabian-inspired treatment for the registration section: richer, more visible, still elegant. */
-.registration-layout{position:relative}
-.registration-layout::before{content:"";position:absolute;left:-1.2rem;right:-1.2rem;bottom:1rem;height:300px;pointer-events:none;background:
-  radial-gradient(ellipse at 22% 56%,rgba(232,185,104,.07),transparent 42%),
-  radial-gradient(ellipse at 80% 26%,rgba(232,185,104,.06),transparent 36%),
-  radial-gradient(ellipse at 50% 100%,rgba(255,226,166,.035),transparent 52%);
-  opacity:1}
-.registration-info{position:sticky;top:clamp(1.4rem,5vh,4rem);align-self:start;padding:clamp(1.6rem,2.6vw,2.25rem) clamp(1.35rem,2.2vw,1.95rem) clamp(1.8rem,2.8vw,2.45rem);border:1px solid rgba(232,185,104,.24);border-radius:1.5rem;background:
-  linear-gradient(180deg,rgba(255,255,255,.026),rgba(255,255,255,0)),
-  radial-gradient(circle at 74% 78%,rgba(232,185,104,.06),transparent 33%),
-  linear-gradient(145deg,rgba(15,27,52,.72),rgba(9,16,33,.42));
-  box-shadow:inset 0 1px 0 rgba(255,255,255,.045), inset 0 0 0 1px rgba(255,226,166,.05), 0 28px 64px rgba(0,0,0,.18);
-  overflow:hidden}
-.registration-info::before{content:"";position:absolute;left:50%;top:1rem;transform:translateX(-50%);width:min(84%,390px);height:40px;background:center/contain no-repeat url('/assets/ornament-divider.svg');opacity:.82;pointer-events:none;filter:drop-shadow(0 0 8px rgba(232,185,104,.08))}
-.registration-info::after{content:"";position:absolute;right:-.35rem;bottom:-.55rem;width:156px;height:156px;background:center/contain no-repeat url('/assets/ornament-corner.svg');opacity:.16;pointer-events:none;filter:drop-shadow(0 0 18px rgba(232,185,104,.05))}
-.registration-info .eyebrow{padding-top:1.6rem;margin-bottom:1rem;text-align:center}
-.registration-info h2{text-wrap:balance}
-.registration-intro{position:relative;z-index:1;color:#ddd0c0;max-width:28rem;margin:0 0 2.15rem}
-.detail-list{position:relative;z-index:1}
-.registration-note{position:relative;z-index:1;margin-top:1.4rem}
-.registration-layout .form-shell{position:relative;max-width:none;width:100%;margin:0;padding:clamp(1.55rem,2.7vw,2.45rem);border-radius:1.5rem;border:1px solid rgba(232,185,104,.22);background:
-  linear-gradient(180deg,rgba(255,255,255,.024),rgba(255,255,255,0)),
-  radial-gradient(circle at 18% 18%,rgba(232,185,104,.055),transparent 30%),
-  linear-gradient(155deg,rgba(21,34,61,.76),rgba(11,19,37,.5));
-  box-shadow:inset 0 1px 0 rgba(255,255,255,.04), inset 0 0 0 1px rgba(255,226,166,.04), 0 28px 60px rgba(0,0,0,.17);overflow:hidden}
-.registration-layout .form-shell::before{content:"";position:absolute;left:50%;top:.95rem;transform:translateX(-50%);width:min(78%,330px);height:34px;background:center/contain no-repeat url('/assets/ornament-divider.svg');opacity:.52;pointer-events:none}
-.registration-layout .form-shell::after{content:"";position:absolute;left:auto;right:-.25rem;top:auto;bottom:-.55rem;width:150px;height:150px;background:center/contain no-repeat url('/assets/ornament-corner.svg');opacity:.12;pointer-events:none;transform:none}
-.form-shell h1{position:relative;padding-top:1.35rem}
-@media(max-width:900px){
-  .registration-layout::before{height:220px;bottom:0}
-  .registration-info{position:static;padding:1.4rem 1.2rem 1.65rem;background:
-    linear-gradient(180deg,rgba(255,255,255,.026),rgba(255,255,255,0)),
-    radial-gradient(circle at 74% 78%,rgba(232,185,104,.06),transparent 33%),
-    linear-gradient(145deg,rgba(15,27,52,.72),rgba(9,16,33,.42));}
-  .registration-info::before{top:.78rem;width:min(78%,330px);height:34px;opacity:.72}
-  .registration-info::after{width:118px;height:118px;right:-.3rem;bottom:-.3rem;opacity:.12}
-  .registration-info .eyebrow{padding-top:1.28rem}
-  .registration-layout .form-shell{padding:1.45rem 1.2rem 1.6rem;background:
-    linear-gradient(180deg,rgba(255,255,255,.024),rgba(255,255,255,0)),
-    radial-gradient(circle at 18% 18%,rgba(232,185,104,.055),transparent 30%),
-    linear-gradient(155deg,rgba(21,34,61,.76),rgba(11,19,37,.5));}
-  .registration-layout .form-shell::before{top:.82rem;width:min(72%,280px);height:30px;opacity:.38}
-  .registration-layout .form-shell::after{width:112px;height:112px;opacity:.09;left:auto;right:-.25rem;top:auto;bottom:-.3rem;transform:none}
-  .form-shell h1{padding-top:1.08rem}
-}
-@media(max-width:620px){
-  .registration-layout::before{display:none}
-  .registration-info{padding:1.25rem 1rem 1.45rem;border-radius:1.15rem;background:
-    linear-gradient(180deg,rgba(255,255,255,.024),rgba(255,255,255,0)),
-    linear-gradient(145deg,rgba(15,27,52,.72),rgba(9,16,33,.42));}
-  .registration-info::before{top:.7rem;width:220px;height:28px;opacity:.68}
-  .registration-info::after{display:none!important}
-  .registration-info .eyebrow{padding-top:1.04rem}
-  .registration-layout .form-shell{padding:1.25rem 1rem 1.45rem;border-radius:1.15rem;background:
-    linear-gradient(180deg,rgba(255,255,255,.022),rgba(255,255,255,0)),
-    linear-gradient(155deg,rgba(21,34,61,.76),rgba(11,19,37,.5));}
-  .registration-layout .form-shell::before{top:.72rem;width:210px;height:26px;opacity:.34}
-  .registration-layout .form-shell::after{display:none!important}
-  .form-shell h1{padding-top:.95rem}
-}
 
 /* The guest invitation is composed in the employee's mail app, never sent by this site. */
 .plus-one-reminder {margin-top:1.4rem;padding:1.35rem 1rem 0;border-top:1px solid rgba(232,185,104,.24)}
@@ -196,36 +137,4 @@ body.dialog-open {overflow:hidden;}
   .confirm-card .confirm-lead {margin-bottom:.75rem}
   .confirm-details {padding:.6rem 0;gap:.4rem;margin-bottom:.65rem}
   .confirm-actions .button,.plus-one-reminder .button {min-height:2.65rem;padding:.55rem 1rem}
-}
-
-
-/* Continuous botanical frame: leaf-based arabesques shared with the main page.
-   Decorative layers stay outside the text flow and cannot intercept clicks. */
-.registration-info::after,.registration-layout .form-shell::after{display:block!important}
-.confirm-card{
-  isolation:isolate;
-  background:radial-gradient(ellipse at 50% 0,rgba(169,97,43,.18),transparent 54%),linear-gradient(150deg,#172440,#090f20);
-}
-.confirm-card::before{
-  content:"";position:absolute;inset:8px;border-radius:inherit;pointer-events:none;z-index:0;
-  background-image:url('/assets/floral-border-horizontal.svg'),url('/assets/floral-border-horizontal.svg'),url('/assets/floral-border-vertical.svg'),url('/assets/floral-border-vertical.svg');
-  background-repeat:repeat-x,repeat-x,repeat-y,repeat-y;
-  background-size:180px 62px,180px 62px,62px 180px,62px 180px;
-  background-position:center top,center bottom,left center,right center;
-  opacity:.68;
-}
-.confirm-card::after{
-  content:"";position:absolute;inset:8px;border-radius:inherit;pointer-events:none;z-index:0;
-  background-image:url('/assets/floral-border-corner.svg'),url('/assets/floral-border-corner-right.svg'),url('/assets/floral-border-corner-bottom-left.svg'),url('/assets/floral-border-corner-bottom-right.svg');
-  background-repeat:no-repeat;
-  background-size:126px 126px;
-  background-position:left top,right top,left bottom,right bottom;
-  /* Mirrors/rotations belong in standalone image assets, not CSS backgrounds. */
-}
-.confirm-card>.confirm-grid,.confirm-card>.confirm-lead,.confirm-card>h2,.confirm-card>.confirm-star{position:relative;z-index:1}
-.confirm-close{z-index:3;background:rgba(10,19,38,.66);border-radius:50%}
-@media(max-width:760px){
-  .confirm-card::before{inset:4px;background-size:180px 42px,180px 42px,40px 180px,40px 180px;opacity:.42}
-  .confirm-card::after{inset:4px;background-size:82px 82px;opacity:.56}
-  .confirm-card>.confirm-grid,.confirm-card>.confirm-lead,.confirm-card>h2{padding-left:7px;padding-right:7px}
 }
