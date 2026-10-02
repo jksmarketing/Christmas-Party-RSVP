@@ -105,7 +105,7 @@ export async function onRequestPost(context) {
       return json({ error: "Deine Anmeldung konnte nicht gespeichert werden. Bitte versuche es später erneut." }, 502);
     }
 
-    return json({ message: "Du bist angemeldet! Wir freuen uns darauf, mit dir zu feiern. 🎄" });
+    return json({ message: attendance === "Yes" ? "Du bist angemeldet! Wir freuen uns darauf, mit dir zu feiern. 🎄" : "Danke für deine Rückmeldung. Schade, dass du nicht dabei sein kannst!" });
   } catch (error) {
     console.error(error);
     return json({ error: "Es ist ein Fehler aufgetreten. Bitte versuche es erneut." }, 500);
@@ -122,3 +122,4 @@ function json(data, status = 200) {
     headers: { "Content-Type": "application/json; charset=utf-8" }
   });
 }
+

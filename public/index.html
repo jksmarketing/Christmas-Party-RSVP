@@ -28,19 +28,20 @@
       </div>
     </section>
 
-    <section class="event-section" aria-label="Eventdetails">
-      <div class="section-line reveal" aria-hidden="true"><span>✦</span></div>
-      <p class="eyebrow reveal">DIE FEIER</p>
-      <div class="event-details reveal">
-        <div><span>WANN</span><strong>Freitag, 4. Dezember 2026</strong></div>
-        <div><span>ANKUNFT</span><strong>Ab 17:30 Uhr</strong></div>
-        <div><span>WO</span><strong><a class="venue-link" href="https://www.google.com/maps/search/?api=1&amp;query=Juckerhof%2C%20Dorfstrasse%2023%2C%208607%20Seegr%C3%A4ben" target="_blank" rel="noopener noreferrer" aria-label="Juckerhof in Google Maps öffnen">Juckerhof, Seegräben <span aria-hidden="true">↗</span></a></strong></div>
-      </div>
-      <p class="event-note reveal">Wir freuen uns darauf, mit dir und deiner Begleitung Weihnachten zu feiern!</p>
-    </section>
-
-    <section class="rsvp-section" id="register">
-      <div class="form-shell reveal">
+    <section class="rsvp-section" id="register" aria-label="Anmeldung und Eventdetails">
+      <div class="registration-layout">
+        <aside class="registration-info reveal" aria-label="Informationen zur Weihnachtsfeier">
+          <p class="eyebrow">A REAL JKS CHRISTMAS</p>
+          <h2>Ein Abend.<br>Ein besonderer Anlass.</h2>
+          <p class="registration-intro">Wir freuen uns darauf, mit dir und deiner Begleitung Weihnachten zu feiern.</p>
+          <dl class="detail-list">
+            <div><dt>WANN</dt><dd>Freitag, 4. Dezember 2026</dd></div>
+            <div><dt>ANKUNFT</dt><dd>Ab 17:30 Uhr</dd></div>
+            <div><dt>WO</dt><dd><a class="venue-link" href="https://www.google.com/maps/search/?api=1&amp;query=Juckerhof%2C%20Dorfstrasse%2023%2C%208607%20Seegr%C3%A4ben" target="_blank" rel="noopener noreferrer">Juckerhof, Seegräben ↗</a></dd></div>
+          </dl>
+          <p class="registration-note">Du kannst eine Begleitperson anmelden. Nach der Anmeldung kannst du deine Begleitperson über dein eigenes E-Mail-Programm einladen.</p>
+        </aside>
+        <div class="form-shell reveal">
         <h1>Feierst du mit uns?</h1>
         <p class="form-intro">Bitte fülle das Formular aus.</p>
         <form id="rsvp-form">
@@ -83,9 +84,38 @@
           <p id="form-message" class="message" role="status" aria-live="polite"></p>
           <p class="privacy">Deine Angaben werden ausschliesslich für die Organisation der JKS Weihnachtsfeier verwendet.</p>
         </form>
+        </div>
       </div>
       <div class="footer-star" aria-hidden="true">✦</div>
     </section>
   </main>
+  <div class="confirm-dialog" id="confirm-dialog" role="dialog" aria-modal="true" aria-labelledby="confirm-title" aria-hidden="true">
+    <div class="confirm-card" tabindex="-1">
+      <button class="confirm-close" id="confirm-close" type="button" aria-label="Schliessen">×</button>
+      <span class="confirm-star" aria-hidden="true">✦</span>
+      <h2 id="confirm-title">Du bist dabei!</h2>
+      <p class="confirm-lead">Wie schön, dass du mit uns feierst. Wir freuen uns auf einen besonderen gemeinsamen Abend.</p>
+      <div class="confirm-details">
+        <div><span>FREITAG</span><strong>4. Dezember 2026</strong></div>
+        <div><span>ANKUNFT</span><strong>Ab 17:30 Uhr</strong></div>
+        <div><span>ORT</span><strong>Juckerhof, Seegräben</strong></div>
+      </div>
+      <div class="confirm-actions">
+        <a class="button button-primary" href="/assets/jks-christmas-2026.ics" download="JKS-Weihnachtsfeier-2026.ics">Zum Kalender hinzufügen ↓</a>
+        <a class="button button-secondary" href="https://www.google.com/maps/search/?api=1&amp;query=Juckerhof%2C%20Dorfstrasse%2023%2C%208607%20Seegr%C3%A4ben" target="_blank" rel="noopener noreferrer">Anfahrt anzeigen ↗</a>
+      </div>
+      <div class="plus-one-reminder" id="plus-one-reminder" hidden>
+        <span class="reminder-icon" aria-hidden="true">✉</span>
+        <h3>Denk daran, deine Begleitperson einzuladen!</h3>
+        <p>Öffne dein E-Mail-Programm und schicke ihr die Einladung. Die Nachricht enthält keinen Anmeldelink.</p>
+        <a class="button button-primary" id="guest-email-link" href="#">Einladung per E-Mail teilen ↗</a>
+        <div class="guest-downloads">
+          <a href="/assets/jks-christmas-hero.jpg" download="JKS-Weihnachtseinladung-2026.jpg">Einladungskarte herunterladen ↓</a>
+          <a href="/assets/jks-christmas-2026.ics" download="JKS-Weihnachtsfeier-2026.ics">Kalenderdatei herunterladen ↓</a>
+        </div>
+        <p class="attachment-hint">Tipp: Du kannst die Einladungskarte und die Kalenderdatei bei Bedarf selbst als Anhänge hinzufügen. E-Mail-Programme übernehmen Anhänge nicht automatisch aus Webseiten.</p>
+      </div>
+    </div>
+  </div>
 </body>
 </html>
