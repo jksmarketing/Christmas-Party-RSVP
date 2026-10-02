@@ -1,10 +1,10 @@
 /**
  * POST /api/register
  *
- * Der Browser sendet die Anmeldung hierhin.
- * Das monday.com API-Token bleibt als Cloudflare-Secret auf dem Server.
+ * The browser submits the RSVP here.
+ * The monday.com API token stays on the server as a Cloudflare secret.
  *
- * Erforderliche Cloudflare-Umgebungsvariablen/Secrets:
+ * Required Cloudflare environment variables/secrets:
  * - MONDAY_API_TOKEN
  * - MONDAY_BOARD_ID
  * - MONDAY_GROUP_ID (optional)
@@ -15,9 +15,9 @@ export async function onRequestPost(context) {
   try {
     const form = await request.formData();
 
-    // Einfaches Anti-Spam-Honeypot.
+    // Simple anti-spam honeypot.
     if (String(form.get("website") || "").trim()) {
-      return json({ message: "Vielen Dank! Deine Anmeldung wurde erfolgreich übermittelt." });
+      return json({ message: "Vielen Dank! Deine Anmeldung ist eingegangen." });
     }
 
     const firstName = clean(form.get("first_name"));
@@ -37,7 +37,7 @@ export async function onRequestPost(context) {
     }
 
     if (!["Yes", "No"].includes(bringingGuest)) {
-      return json({ error: "Bitte wähle eine gültige Begleitpersonen-Option." }, 400);
+      return json({ error: "Bitte wähle eine gültige Option für die Begleitperson aus." }, 400);
     }
 
     if (bringingGuest === "Yes" && attendance !== "Yes") {
@@ -45,17 +45,17 @@ export async function onRequestPost(context) {
     }
 
     if (bringingGuest === "Yes" && !guestName) {
-      return json({ error: "Bitte gib den Namen deiner Begleitperson an." }, 400);
+      return json({ error: "Bitte gib den Namen deiner Begleitperson ein." }, 400);
     }
 
     if (!env.MONDAY_API_TOKEN || !env.MONDAY_BOARD_ID) {
-      console.log("Monday.com ist noch nicht konfiguriert.");
+      console.log("Monday.com is not configured yet.");
       return json({
-        error: "Das Formular ist noch nicht mit monday.com verbunden. Bitte hinterlege MONDAY_API_TOKEN und MONDAY_BOARD_ID in Cloudflare."
+        error: "Das Formular ist noch nicht mit monday.com verbunden. Bitte hinterlege MONDAY_API_TOKEN und MONDAY_BOARD_ID in Cloudflare, bevor du es live nutzt."
       }, 503);
     }
 
-    const dietaryText = dietary.length ? dietary.join(", ") : "Keine Angaben";
+    const dietaryText = dietary.length ? dietary.join(", ") : "Keine Angabe";
     const columnValues = {
       color_mm7q3wsc: { label: attendance },
       text_mm7qpayv: dietaryText,
@@ -108,7 +108,7 @@ export async function onRequestPost(context) {
     return json({ message: "Du bist angemeldet! Wir freuen uns darauf, mit dir zu feiern. 🎄" });
   } catch (error) {
     console.error(error);
-    return json({ error: "Etwas ist schiefgelaufen. Bitte versuche es erneut." }, 500);
+    return json({ error: "Es ist ein Fehler aufgetreten. Bitte versuche es erneut." }, 500);
   }
 }
 

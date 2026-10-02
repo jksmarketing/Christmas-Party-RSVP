@@ -21,7 +21,7 @@ function updateGuestFields() {
 
   setHidden(plusOneFieldset, !attending);
   setHidden(attendingDetails, !attending);
-  // Keine veralteten Angaben übermitteln, falls jemand absagt.
+
   attendingDetails.querySelectorAll('input, textarea').forEach((field) => {
     field.disabled = !attending;
     if (!attending) {
@@ -29,8 +29,8 @@ function updateGuestFields() {
       if (field.tagName === "TEXTAREA") field.value = "";
     }
   });
-  setHidden(guestNameWrapper, !showGuestName);
 
+  setHidden(guestNameWrapper, !showGuestName);
   guestNameInput.required = showGuestName;
 
   if (!attending) {
@@ -67,24 +67,21 @@ form.addEventListener("submit", async (event) => {
     });
 
     const result = await response.json();
-
     if (!response.ok) throw new Error(result.error || "Etwas ist schiefgelaufen.");
 
     form.reset();
     updateGuestFields();
-    message.textContent = result.message || "Vielen Dank! Deine Anmeldung wurde erfolgreich übermittelt. 🎄";
+    message.textContent = result.message || "Vielen Dank! Deine Anmeldung ist eingegangen. 🎄";
     message.className = "message success";
     button.textContent = "Anmeldung gesendet ✓";
   } catch (error) {
-    message.textContent = error.message || "Deine Anmeldung konnte leider nicht gesendet werden. Bitte versuche es erneut.";
+    message.textContent = error.message || "Entschuldigung, deine Anmeldung konnte nicht gesendet werden. Bitte versuche es erneut.";
     message.className = "message error";
     button.disabled = false;
     button.textContent = "Anmeldung senden";
   }
 });
 
-// Zeigt den nächsten Abschnitt erst beim Scrollen an.
-// Falls IntersectionObserver nicht unterstützt wird, bleibt alles sichtbar.
 if ("IntersectionObserver" in window && !window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
   document.documentElement.classList.add("js-motion");
   const observer = new IntersectionObserver((entries) => {
